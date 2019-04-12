@@ -1,0 +1,263 @@
+- 19Feb19:
+    excelfile: data/neut_plate_reader_data/19Feb19 Neutralization Assays (1-3, 11-15).xlsx
+    sheet_mapping:
+      1:
+        serum: HC070047
+        virus: wt
+        dilution_factor: 3
+        initial_concentration: 0.00926
+      2:
+        serum: HC070009
+        virus: wt
+        dilution_factor: 3
+        initial_concentration: 0.00926
+      3:
+        serum: HC150047
+        virus: wt
+        dilution_factor: 3
+        initial_concentration: 0.00926
+      11:
+        serum: HC070021
+        virus: wt
+        dilution_factor: 3
+        initial_concentration: 0.00926
+      12:
+        serum: HC080004
+        virus: wt
+        dilution_factor: 3
+        initial_concentration: 0.00926
+      13:
+        serum: HC060002
+        virus: wt
+        dilution_factor: 3
+        initial_concentration: 0.00926
+      14:
+        serum: HC060077
+        virus: wt
+        dilution_factor: 3
+        initial_concentration: 0.00926
+      15:
+        serum: HC150044
+        virus: wt
+        dilution_factor: 3
+        initial_concentration: 0.00926
+
+- 22Feb19:
+    excelfile: data/neut_plate_reader_data/22Feb19 Neutralization Assays (16-23).xlsx
+    sheet_mapping:
+      16:
+        serum: HC080048
+        virus: wt
+        dilution_factor: 3
+        initial_concentration: 0.00926
+      17:
+        serum: HC080043
+        virus: wt
+        dilution_factor: 3
+        initial_concentration: 0.00926
+      19:
+        serum: HC140010
+        virus: wt
+        dilution_factor: 3
+        initial_concentration: 0.00926
+      20:
+        serum: HC070072
+        virus: wt
+        dilution_factor: 3
+        initial_concentration: 0.00926
+      21:
+        serum: HC070041
+        virus: wt
+        dilution_factor: 3
+        initial_concentration: 0.00926
+      22:
+        serum: HC120043
+        virus: wt
+        dilution_factor: 3
+        initial_concentration: 0.00926
+      23:
+        serum: HC150036
+        virus: wt
+        dilution_factor: 3
+        initial_concentration: 0.00926
+
+- 25Feb19:
+    excelfile: data/neut_plate_reader_data/25Feb19 Neutralization Assays (18, 24-30).xlsx
+    sheet_mapping:
+      18:
+        serum: HC060106
+        virus: wt
+        dilution_factor: 3
+        initial_concentration: 0.00926
+      24:
+        serum: HC050031
+        virus: wt
+        dilution_factor: 3
+        initial_concentration: 0.00926
+      25:
+        serum: HC140028
+        virus: wt
+        dilution_factor: 3
+        initial_concentration: 0.00926
+      26:
+        serum: HC120108
+        virus: wt
+        dilution_factor: 3
+        initial_concentration: 0.00926
+      27:
+        serum: HC150111
+        virus: wt
+        dilution_factor: 3
+        initial_concentration: 0.00926
+      28:
+        serum: HC110074
+        virus: wt
+        dilution_factor: 3
+        initial_concentration: 0.00926
+      29:
+        serum: HC130135
+        virus: wt
+        dilution_factor: 3
+        initial_concentration: 0.00926
+      30:
+        serum: HC080077
+        virus: wt
+        dilution_factor: 3
+        initial_concentration: 0.00926
+
+- 26Feb19:
+    excelfile: data/neut_plate_reader_data/26Feb19 Neutralization Assays (31-38).xlsx
+    sheet_mapping:
+      31:
+        serum: HC100072
+        virus: wt
+        dilution_factor: 3
+        initial_concentration: 0.00926
+      32:
+        serum: HC150124
+        virus: wt
+        dilution_factor: 3
+        initial_concentration: 0.00926
+      33:
+        serum: HC130143
+        virus: wt
+        dilution_factor: 3
+        initial_concentration: 0.00926
+      34:
+        serum: HC150140
+        virus: wt
+        dilution_factor: 3
+        initial_concentration: 0.00926
+      35:
+        serum: HC110090
+        virus: wt
+        dilution_factor: 3
+        initial_concentration: 0.00926
+      36:
+        serum: HC040121
+        virus: wt
+        dilution_factor: 3
+        initial_concentration: 0.00926
+      37:
+        serum: HC100080
+        virus: wt
+        dilution_factor: 3
+        initial_concentration: 0.00926
+      38:
+        serum: HC130149
+        virus: wt
+        dilution_factor: 3
+        initial_concentration: 0.00926
+
+- 27Feb19:
+    excelfile: data/neut_plate_reader_data/27Feb19 Neutralization Assays (39-48).xlsx
+    sheet_mapping:
+      39:
+        serum: HC080061
+        virus: wt
+        dilution_factor: 3
+        initial_concentration: 0.00926
+      40:
+        serum: HC080059
+        virus: wt
+        dilution_factor: 3
+        initial_concentration: 0.00926
+      41:
+        serum: HC080054
+        virus: wt
+        dilution_factor: 3
+        initial_concentration: 0.00926
+      42:
+        serum: HC150099
+        virus: wt
+        dilution_factor: 3
+        initial_concentration: 0.00926
+      43:
+        serum: HC150108
+        virus: wt
+        dilution_factor: 3
+        initial_concentration: 0.00926
+      44:
+        serum: HC070097
+        virus: wt
+        dilution_factor: 3
+        initial_concentration: 0.00926
+      45:
+        serum: HC100062
+        virus: wt
+        dilution_factor: 3
+        initial_concentration: 0.00926
+      46:
+        serum: HC090070
+        virus: wt
+        dilution_factor: 3
+        initial_concentration: 0.00926
+      47:
+        serum: HC040090
+        virus: wt
+        dilution_factor: 3
+        initial_concentration: 0.00926
+      48:
+        serum: HC090064
+        virus: wt
+        dilution_factor: 3
+        initial_concentration: 0.00926
+
+- 04Mar19:
+    excelfile: data/neut_plate_reader_data/04Mar19 Neutralization Assays (4-10).xlsx
+    sheet_mapping:
+      4:
+        serum: HC070005
+        virus: wt
+        dilution_factor: 3
+        initial_concentration: 0.00926
+      5:
+        serum: HC060087
+        virus: wt
+        dilution_factor: 3
+        initial_concentration: 0.00926
+      6:
+        serum: HC070063
+        virus: wt
+        dilution_factor: 3
+        initial_concentration: 0.00926
+      7:
+        serum: HC060062
+        virus: wt
+        dilution_factor: 3
+        initial_concentration: 0.00926
+      8:
+        serum: HC110020
+        virus: wt
+        dilution_factor: 3
+        initial_concentration: 0.00926
+      9:
+        serum: HC150080
+        virus: wt
+        dilution_factor: 3
+        initial_concentration: 0.00926
+      10:
+        serum: HC150021
+        virus: wt
+        dilution_factor: 3
+        initial_concentration: 0.00926
