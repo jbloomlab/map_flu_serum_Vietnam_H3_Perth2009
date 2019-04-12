@@ -1,4 +1,6 @@
 .*
 !.gitignore
 
-results
+results/*
+
+!results/notebooks
