@@ -1,0 +1,10 @@
+# Configuration for analysis
+
+# information on serum samples
+serum_info: data/serum_info.csv
+
+# information on neutralization assays against wildtype
+wt_neut_config: data/wt_neut_config.yaml
+
+# results directories
+wt_neut_and_bind_outdir: results/wt_neut_and_bind

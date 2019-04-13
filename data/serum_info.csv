@@ -1,4 +1,4 @@
-﻿sample,group,Age,H1_2009_Binding_Titer,H3_2011_Binding_Titer,sample_subset
+﻿serum,serum_group,age,H1_2009_binding,H3_2011_binding,serum_sample_subset
 HC070041,serum,2.1,1810.0,1810,1D
 HC140010,serum,2.1,813.2,829.72,1D
 HC070063,serum,2.2,1810.0,10,1B
