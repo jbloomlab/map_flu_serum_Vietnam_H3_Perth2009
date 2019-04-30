@@ -38,9 +38,11 @@ Specifically:
 
     - *age*: age of individual from whom serum was obtained
 
-    - *H1_binding*: binding titer to 2009 pdmH1N1 HA
+    - *H1_2009_binding*: binding titer to A/California/6/2009 (pdmH1N1) HA
 
-    - *H3_2011_binding*: binding titer to 2011 H3N2 HA
+    - *H3_2009_binding*: binding titer to A/Victoria/210/2009 (H3N2) HA
+
+    - *H3_2011_binding*: binding titer to A/Victoria/361/2011 (H3N2) HA
 
     - *serum_sample_subset*: subset group to which serum belongs in initial partitioning used by Maciek to select samples for this study
 

@@ -35,7 +35,7 @@ import neutcurve.parse_excel
 print(f"Using neutcurve version {neutcurve.__version__}")
 ```
 
-    Using neutcurve version 0.1.dev0
+    Using neutcurve version 0.1.0
 
 
 Set output format of pandas Data Frames:
@@ -211,10 +211,12 @@ We color points differently depending on whether they are child (<10 years) or a
 
 
 ```python
+binding_cols = ['H3_2009_binding', 'H3_2011_binding', 'H1_2009_binding']
+
 ic50_vs_bind_plot = (
     neut_and_bind
     .melt(id_vars=['age', 'ic50', 'ic50_bound'],
-          value_vars=['H3_2011_binding', 'H1_2009_binding'],
+          value_vars=binding_cols,
           var_name='bind_type',
           value_name='binding titer'
           )
@@ -235,7 +237,7 @@ ic50_vs_bind_plot = (
           scale_color_manual(values=CBPALETTE[1: ]) +
           facet_wrap('~ bind_type') +
           theme_bw() +
-          theme(figure_size=(4, 2),
+          theme(figure_size=(2 * len(binding_cols), 2),
                 legend_key=element_blank()) +
           guides(shape=guide_legend(title='neutralization titer'))
           
