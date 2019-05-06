@@ -1,6 +1,6 @@
 
 <h1>Table of Contents<span class="tocSkip"></span></h1>
-<div class="toc"><ul class="toc-item"><li><span><a href="#Serum-neutralization-and-binding-to-wildtype-HA" data-toc-modified-id="Serum-neutralization-and-binding-to-wildtype-HA-1">Serum neutralization and binding to wildtype HA</a></span><ul class="toc-item"><li><span><a href="#Overview" data-toc-modified-id="Overview-1.1">Overview</a></span></li><li><span><a href="#Import-Python-packages" data-toc-modified-id="Import-Python-packages-1.2">Import Python packages</a></span></li><li><span><a href="#Configuration-and-setup" data-toc-modified-id="Configuration-and-setup-1.3">Configuration and setup</a></span></li><li><span><a href="#Read-neutralization-data" data-toc-modified-id="Read-neutralization-data-1.4">Read neutralization data</a></span></li><li><span><a href="#Fit-and-plot-neutralization-curves" data-toc-modified-id="Fit-and-plot-neutralization-curves-1.5">Fit and plot neutralization curves</a></span></li><li><span><a href="#Compare-neutralization-to-binding-data" data-toc-modified-id="Compare-neutralization-to-binding-data-1.6">Compare neutralization to binding data</a></span></li><li><span><a href="#Examine-IC50-/-IC95-for-mutational-antigenic-profiling" data-toc-modified-id="Examine-IC50-/-IC95-for-mutational-antigenic-profiling-1.7">Examine IC50 / IC95 for mutational antigenic profiling</a></span></li></ul></li></ul></div>
+<div class="toc"><ul class="toc-item"><li><span><a href="#Serum-neutralization-and-binding-to-wildtype-HA" data-toc-modified-id="Serum-neutralization-and-binding-to-wildtype-HA-1">Serum neutralization and binding to wildtype HA</a></span><ul class="toc-item"><li><span><a href="#Overview" data-toc-modified-id="Overview-1.1">Overview</a></span></li><li><span><a href="#Import-Python-packages" data-toc-modified-id="Import-Python-packages-1.2">Import Python packages</a></span></li><li><span><a href="#Configuration-and-setup" data-toc-modified-id="Configuration-and-setup-1.3">Configuration and setup</a></span></li><li><span><a href="#Read-neutralization-data" data-toc-modified-id="Read-neutralization-data-1.4">Read neutralization data</a></span></li><li><span><a href="#Fit-and-plot-neutralization-curves" data-toc-modified-id="Fit-and-plot-neutralization-curves-1.5">Fit and plot neutralization curves</a></span></li><li><span><a href="#Compare-neutralization-to-binding-data" data-toc-modified-id="Compare-neutralization-to-binding-data-1.6">Compare neutralization to binding data</a></span></li><li><span><a href="#Examine-concentrations-for-mutational-antigenic-profiling" data-toc-modified-id="Examine-concentrations-for-mutational-antigenic-profiling-1.7">Examine concentrations for mutational antigenic profiling</a></span></li></ul></li></ul></div>
 
 # Serum neutralization and binding to wildtype HA
 
@@ -35,7 +35,7 @@ import neutcurve.parse_excel
 print(f"Using neutcurve version {neutcurve.__version__}")
 ```
 
-    Using neutcurve version 0.1.0
+    Using neutcurve version 0.2.0
 
 
 Set output format of pandas Data Frames:
@@ -195,11 +195,13 @@ print(f"Read information for {len(sera)} sera.")
     Read information for 48 sera.
 
 
-Now we get the neutralization curve fit parameters (including the IC50 as well as the IC95), make sure we have serum information for all sera for which we have curves, and then merge them into a single data frame:
+Now we get the neutralization curve fit parameters (including the IC50 and various other inhibitory concentraitons), make sure we have serum information for all sera for which we have curves, and then merge them into a single data frame:
 
 
 ```python
-fitparams = fits.fitParams(ics=[50, 95])
+ics = [50, 80, 90, 95]
+
+fitparams = fits.fitParams(ics=ics)
 
 assert set(fitparams['serum']) <= set(sera['serum'])
 
@@ -265,15 +267,14 @@ Overall, the results in the above plot make sense:
   - It appears that there is a stronger association of high binding with high neutralization for children. This
     This is consistent with the basic idea suggested in [Ranjeva et al (2019)](https://www.nature.com/articles/s41467-019-09652-6) that sera from children tends to target HI / neutralizing epitopes, whereas for adults this isn't always the case.
 
-## Examine IC50 / IC95 for mutational antigenic profiling
-Below we tabulate the serum by IC95 to see which ones might have appropriate concentrations for mutational antigenic profiling:
+## Examine concentrations for mutational antigenic profiling
+Below we tabulate the serum by various inhibitory concentrations to see which ones might have appropriate concentrations for mutational antigenic profiling:
 
 
 ```python
 display(HTML(neut_and_bind
-             .sort_values(['ic95', 'ic50'])
-             [['serum', 'ic95_str', 'ic50_str', 'age', 'H3_2011_binding',
-               'H1_2009_binding']]
+             .sort_values('ic50')
+             [['serum'] + [f"ic{ic}_str" for ic in ics]]
              .to_html(index=False)
              ))
 ```
@@ -283,397 +284,348 @@ display(HTML(neut_and_bind
   <thead>
     <tr style="text-align: right;">
       <th>serum</th>
-      <th>ic95_str</th>
       <th>ic50_str</th>
-      <th>age</th>
-      <th>H3_2011_binding</th>
-      <th>H1_2009_binding</th>
+      <th>ic80_str</th>
+      <th>ic90_str</th>
+      <th>ic95_str</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <td>HC070097</td>
-      <td>0.000401</td>
       <td>7.14e-05</td>
-      <td>31.5</td>
-      <td>1.81e+03</td>
-      <td>1.81e+03</td>
+      <td>0.000161</td>
+      <td>0.000259</td>
+      <td>0.000401</td>
     </tr>
     <tr>
       <td>HC070021</td>
-      <td>0.000478</td>
       <td>0.000109</td>
-      <td>2.4</td>
-      <td>1.81e+03</td>
-      <td>22.5</td>
-    </tr>
-    <tr>
-      <td>HC070041</td>
-      <td>0.000849</td>
-      <td>0.000396</td>
-      <td>2.1</td>
-      <td>1.81e+03</td>
-      <td>1.81e+03</td>
-    </tr>
-    <tr>
-      <td>HC150036</td>
-      <td>0.0012</td>
-      <td>0.000388</td>
-      <td>2.2</td>
-      <td>1.81e+03</td>
-      <td>1.81e+03</td>
+      <td>0.000219</td>
+      <td>0.000328</td>
+      <td>0.000478</td>
     </tr>
     <tr>
       <td>HC150044</td>
-      <td>0.00121</td>
       <td>0.000341</td>
-      <td>3.4</td>
-      <td>1.81e+03</td>
-      <td>21.3</td>
+      <td>0.00062</td>
+      <td>0.000878</td>
+      <td>0.00121</td>
     </tr>
     <tr>
-      <td>HC060002</td>
-      <td>0.00178</td>
-      <td>0.000562</td>
-      <td>3.5</td>
-      <td>773</td>
-      <td>10</td>
+      <td>HC150036</td>
+      <td>0.000388</td>
+      <td>0.00066</td>
+      <td>0.000901</td>
+      <td>0.0012</td>
     </tr>
     <tr>
-      <td>HC140028</td>
-      <td>0.00188</td>
-      <td>0.00105</td>
-      <td>2.5</td>
-      <td>1.18e+03</td>
-      <td>605</td>
-    </tr>
-    <tr>
-      <td>HC120043</td>
-      <td>0.00256</td>
-      <td>0.000573</td>
-      <td>2.5</td>
-      <td>1.81e+03</td>
-      <td>1.81e+03</td>
+      <td>HC070041</td>
+      <td>0.000396</td>
+      <td>0.000567</td>
+      <td>0.000699</td>
+      <td>0.000849</td>
     </tr>
     <tr>
       <td>HC080054</td>
-      <td>0.00324</td>
       <td>0.000503</td>
-      <td>33.5</td>
-      <td>1.81e+03</td>
-      <td>528</td>
+      <td>0.00121</td>
+      <td>0.00202</td>
+      <td>0.00324</td>
+    </tr>
+    <tr>
+      <td>HC060002</td>
+      <td>0.000562</td>
+      <td>0.000968</td>
+      <td>0.00133</td>
+      <td>0.00178</td>
+    </tr>
+    <tr>
+      <td>HC120043</td>
+      <td>0.000573</td>
+      <td>0.00116</td>
+      <td>0.00175</td>
+      <td>0.00256</td>
     </tr>
     <tr>
       <td>HC150108</td>
-      <td>0.00325</td>
       <td>0.000625</td>
-      <td>30.5</td>
-      <td>1.22e+03</td>
-      <td>1.81e+03</td>
-    </tr>
-    <tr>
-      <td>HC080048</td>
-      <td>0.00473</td>
-      <td>0.0016</td>
-      <td>6.3</td>
-      <td>514</td>
-      <td>10</td>
-    </tr>
-    <tr>
-      <td>HC110074</td>
-      <td>0.00589</td>
-      <td>0.00176</td>
-      <td>38.8</td>
-      <td>495</td>
-      <td>90.6</td>
+      <td>0.00136</td>
+      <td>0.00214</td>
+      <td>0.00325</td>
     </tr>
     <tr>
       <td>HC080043</td>
-      <td>0.00605</td>
       <td>0.000684</td>
-      <td>3.3</td>
-      <td>982</td>
-      <td>57.2</td>
+      <td>0.00191</td>
+      <td>0.00348</td>
+      <td>0.00605</td>
+    </tr>
+    <tr>
+      <td>HC140028</td>
+      <td>0.00105</td>
+      <td>0.00139</td>
+      <td>0.00163</td>
+      <td>0.00188</td>
     </tr>
     <tr>
       <td>HC150099</td>
-      <td>0.00614</td>
       <td>0.0011</td>
-      <td>30.5</td>
-      <td>486</td>
-      <td>1.81e+03</td>
+      <td>0.00247</td>
+      <td>0.00396</td>
+      <td>0.00614</td>
     </tr>
     <tr>
       <td>HC070072</td>
-      <td>0.00617</td>
       <td>0.00118</td>
-      <td>3.3</td>
-      <td>1.81e+03</td>
-      <td>1.81e+03</td>
-    </tr>
-    <tr>
-      <td>HC140010</td>
-      <td>0.00629</td>
-      <td>0.00262</td>
-      <td>2.1</td>
-      <td>830</td>
-      <td>813</td>
+      <td>0.00258</td>
+      <td>0.00406</td>
+      <td>0.00617</td>
     </tr>
     <tr>
       <td>HC080004</td>
-      <td>0.00731</td>
       <td>0.00129</td>
-      <td>3.5</td>
-      <td>1.06e+03</td>
-      <td>10</td>
+      <td>0.00292</td>
+      <td>0.00471</td>
+      <td>0.00731</td>
     </tr>
     <tr>
-      <td>HC050031</td>
-      <td>0.00736</td>
-      <td>0.00223</td>
-      <td>5.5</td>
-      <td>1.1e+03</td>
-      <td>703</td>
-    </tr>
-    <tr>
-      <td>HC150111</td>
-      <td>0.00841</td>
-      <td>0.00224</td>
-      <td>34.5</td>
-      <td>821</td>
-      <td>92.9</td>
+      <td>HC080048</td>
+      <td>0.0016</td>
+      <td>0.00266</td>
+      <td>0.00359</td>
+      <td>0.00473</td>
     </tr>
     <tr>
       <td>HC060077</td>
-      <td>0.00864</td>
       <td>0.00174</td>
-      <td>4.5</td>
-      <td>1.81e+03</td>
-      <td>50.4</td>
+      <td>0.0037</td>
+      <td>0.00576</td>
+      <td>0.00864</td>
+    </tr>
+    <tr>
+      <td>HC110074</td>
+      <td>0.00176</td>
+      <td>0.00311</td>
+      <td>0.00433</td>
+      <td>0.00589</td>
     </tr>
     <tr>
       <td>HC080059</td>
-      <td>&gt;0.00926</td>
       <td>0.0019</td>
-      <td>38.5</td>
-      <td>1.81e+03</td>
-      <td>511</td>
+      <td>&gt;0.00926</td>
+      <td>&gt;0.00926</td>
+      <td>&gt;0.00926</td>
     </tr>
     <tr>
       <td>HC150140</td>
-      <td>&gt;0.00926</td>
       <td>0.00217</td>
-      <td>37.5</td>
-      <td>1.81e+03</td>
-      <td>805</td>
+      <td>0.00549</td>
+      <td>&gt;0.00926</td>
+      <td>&gt;0.00926</td>
     </tr>
     <tr>
       <td>HC110090</td>
-      <td>&gt;0.00926</td>
       <td>0.00219</td>
-      <td>34.5</td>
-      <td>1.13e+03</td>
-      <td>1.81e+03</td>
+      <td>0.00762</td>
+      <td>&gt;0.00926</td>
+      <td>&gt;0.00926</td>
+    </tr>
+    <tr>
+      <td>HC050031</td>
+      <td>0.00223</td>
+      <td>0.00391</td>
+      <td>0.00544</td>
+      <td>0.00736</td>
+    </tr>
+    <tr>
+      <td>HC150111</td>
+      <td>0.00224</td>
+      <td>0.00418</td>
+      <td>0.00601</td>
+      <td>0.00841</td>
+    </tr>
+    <tr>
+      <td>HC140010</td>
+      <td>0.00262</td>
+      <td>0.00396</td>
+      <td>0.00504</td>
+      <td>0.00629</td>
     </tr>
     <tr>
       <td>HC090064</td>
-      <td>&gt;0.00926</td>
       <td>0.00274</td>
-      <td>39.5</td>
-      <td>1.81e+03</td>
-      <td>793</td>
+      <td>&gt;0.00926</td>
+      <td>&gt;0.00926</td>
+      <td>&gt;0.00926</td>
     </tr>
     <tr>
       <td>HC060106</td>
-      <td>&gt;0.00926</td>
       <td>0.00395</td>
-      <td>3.5</td>
-      <td>1.81e+03</td>
-      <td>577</td>
+      <td>0.00591</td>
+      <td>0.00747</td>
+      <td>&gt;0.00926</td>
     </tr>
     <tr>
       <td>HC090070</td>
-      <td>&gt;0.00926</td>
       <td>0.00431</td>
-      <td>38.5</td>
-      <td>1.81e+03</td>
-      <td>1.2e+03</td>
+      <td>&gt;0.00926</td>
+      <td>&gt;0.00926</td>
+      <td>&gt;0.00926</td>
     </tr>
     <tr>
       <td>HC100072</td>
-      <td>&gt;0.00926</td>
       <td>0.00453</td>
-      <td>26.6</td>
-      <td>737</td>
-      <td>1.31e+03</td>
+      <td>&gt;0.00926</td>
+      <td>&gt;0.00926</td>
+      <td>&gt;0.00926</td>
     </tr>
     <tr>
       <td>HC040090</td>
-      <td>&gt;0.00926</td>
       <td>0.00626</td>
-      <td>26.5</td>
-      <td>658</td>
-      <td>831</td>
+      <td>&gt;0.00926</td>
+      <td>&gt;0.00926</td>
+      <td>&gt;0.00926</td>
     </tr>
     <tr>
       <td>HC130149</td>
-      <td>&gt;0.00926</td>
       <td>0.00682</td>
-      <td>22.5</td>
-      <td>648</td>
-      <td>609</td>
+      <td>&gt;0.00926</td>
+      <td>&gt;0.00926</td>
+      <td>&gt;0.00926</td>
     </tr>
     <tr>
       <td>HC100080</td>
-      <td>&gt;0.00926</td>
       <td>0.00825</td>
-      <td>38.5</td>
-      <td>1.11e+03</td>
-      <td>1.81e+03</td>
+      <td>&gt;0.00926</td>
+      <td>&gt;0.00926</td>
+      <td>&gt;0.00926</td>
     </tr>
     <tr>
       <td>HC150124</td>
-      <td>&gt;0.00926</td>
       <td>0.00925</td>
-      <td>20.5</td>
-      <td>579</td>
-      <td>1.37e+03</td>
+      <td>&gt;0.00926</td>
+      <td>&gt;0.00926</td>
+      <td>&gt;0.00926</td>
     </tr>
     <tr>
       <td>HC070063</td>
       <td>&gt;0.00926</td>
       <td>&gt;0.00926</td>
-      <td>2.2</td>
-      <td>10</td>
-      <td>1.81e+03</td>
+      <td>&gt;0.00926</td>
+      <td>&gt;0.00926</td>
     </tr>
     <tr>
       <td>HC070009</td>
       <td>&gt;0.00926</td>
       <td>&gt;0.00926</td>
-      <td>2.3</td>
-      <td>21.4</td>
-      <td>10</td>
+      <td>&gt;0.00926</td>
+      <td>&gt;0.00926</td>
     </tr>
     <tr>
       <td>HC150021</td>
       <td>&gt;0.00926</td>
       <td>&gt;0.00926</td>
-      <td>2.3</td>
-      <td>10</td>
-      <td>812</td>
-    </tr>
-    <tr>
-      <td>HC060062</td>
       <td>&gt;0.00926</td>
       <td>&gt;0.00926</td>
-      <td>2.5</td>
-      <td>10</td>
-      <td>824</td>
-    </tr>
-    <tr>
-      <td>HC150047</td>
-      <td>&gt;0.00926</td>
-      <td>&gt;0.00926</td>
-      <td>2.5</td>
-      <td>10</td>
-      <td>10</td>
-    </tr>
-    <tr>
-      <td>HC070005</td>
-      <td>&gt;0.00926</td>
-      <td>&gt;0.00926</td>
-      <td>2.5</td>
-      <td>44.5</td>
-      <td>1.01e+03</td>
-    </tr>
-    <tr>
-      <td>HC150080</td>
-      <td>&gt;0.00926</td>
-      <td>&gt;0.00926</td>
-      <td>2.5</td>
-      <td>10</td>
-      <td>1.22e+03</td>
-    </tr>
-    <tr>
-      <td>HC070047</td>
-      <td>&gt;0.00926</td>
-      <td>&gt;0.00926</td>
-      <td>2.9</td>
-      <td>10</td>
-      <td>10</td>
-    </tr>
-    <tr>
-      <td>HC110020</td>
-      <td>&gt;0.00926</td>
-      <td>&gt;0.00926</td>
-      <td>3.1</td>
-      <td>10</td>
-      <td>1.81e+03</td>
-    </tr>
-    <tr>
-      <td>HC060087</td>
-      <td>&gt;0.00926</td>
-      <td>&gt;0.00926</td>
-      <td>3.5</td>
-      <td>10</td>
-      <td>702</td>
-    </tr>
-    <tr>
-      <td>HC130135</td>
-      <td>&gt;0.00926</td>
-      <td>&gt;0.00926</td>
-      <td>21.2</td>
-      <td>1.81e+03</td>
-      <td>1.21e+03</td>
-    </tr>
-    <tr>
-      <td>HC040121</td>
-      <td>&gt;0.00926</td>
-      <td>&gt;0.00926</td>
-      <td>26.5</td>
-      <td>605</td>
-      <td>531</td>
-    </tr>
-    <tr>
-      <td>HC080077</td>
-      <td>&gt;0.00926</td>
-      <td>&gt;0.00926</td>
-      <td>30.5</td>
-      <td>1.22e+03</td>
-      <td>1.05e+03</td>
-    </tr>
-    <tr>
-      <td>HC130143</td>
-      <td>&gt;0.00926</td>
-      <td>&gt;0.00926</td>
-      <td>30.5</td>
-      <td>1.1e+03</td>
-      <td>901</td>
-    </tr>
-    <tr>
-      <td>HC080061</td>
-      <td>&gt;0.00926</td>
-      <td>&gt;0.00926</td>
-      <td>30.5</td>
-      <td>1.81e+03</td>
-      <td>509</td>
-    </tr>
-    <tr>
-      <td>HC120108</td>
-      <td>&gt;0.00926</td>
-      <td>&gt;0.00926</td>
-      <td>31</td>
-      <td>1.18e+03</td>
-      <td>10</td>
     </tr>
     <tr>
       <td>HC100062</td>
       <td>&gt;0.00926</td>
       <td>&gt;0.00926</td>
-      <td>32.5</td>
-      <td>656</td>
-      <td>548</td>
+      <td>&gt;0.00926</td>
+      <td>&gt;0.00926</td>
+    </tr>
+    <tr>
+      <td>HC060062</td>
+      <td>&gt;0.00926</td>
+      <td>&gt;0.00926</td>
+      <td>&gt;0.00926</td>
+      <td>&gt;0.00926</td>
+    </tr>
+    <tr>
+      <td>HC060087</td>
+      <td>&gt;0.00926</td>
+      <td>&gt;0.00926</td>
+      <td>&gt;0.00926</td>
+      <td>&gt;0.00926</td>
+    </tr>
+    <tr>
+      <td>HC150047</td>
+      <td>&gt;0.00926</td>
+      <td>&gt;0.00926</td>
+      <td>&gt;0.00926</td>
+      <td>&gt;0.00926</td>
+    </tr>
+    <tr>
+      <td>HC080061</td>
+      <td>&gt;0.00926</td>
+      <td>&gt;0.00926</td>
+      <td>&gt;0.00926</td>
+      <td>&gt;0.00926</td>
+    </tr>
+    <tr>
+      <td>HC130143</td>
+      <td>&gt;0.00926</td>
+      <td>&gt;0.00926</td>
+      <td>&gt;0.00926</td>
+      <td>&gt;0.00926</td>
+    </tr>
+    <tr>
+      <td>HC080077</td>
+      <td>&gt;0.00926</td>
+      <td>&gt;0.00926</td>
+      <td>&gt;0.00926</td>
+      <td>&gt;0.00926</td>
+    </tr>
+    <tr>
+      <td>HC040121</td>
+      <td>&gt;0.00926</td>
+      <td>&gt;0.00926</td>
+      <td>&gt;0.00926</td>
+      <td>&gt;0.00926</td>
+    </tr>
+    <tr>
+      <td>HC130135</td>
+      <td>&gt;0.00926</td>
+      <td>&gt;0.00926</td>
+      <td>&gt;0.00926</td>
+      <td>&gt;0.00926</td>
+    </tr>
+    <tr>
+      <td>HC150080</td>
+      <td>&gt;0.00926</td>
+      <td>&gt;0.00926</td>
+      <td>&gt;0.00926</td>
+      <td>&gt;0.00926</td>
+    </tr>
+    <tr>
+      <td>HC070047</td>
+      <td>&gt;0.00926</td>
+      <td>&gt;0.00926</td>
+      <td>&gt;0.00926</td>
+      <td>&gt;0.00926</td>
+    </tr>
+    <tr>
+      <td>HC110020</td>
+      <td>&gt;0.00926</td>
+      <td>&gt;0.00926</td>
+      <td>&gt;0.00926</td>
+      <td>&gt;0.00926</td>
+    </tr>
+    <tr>
+      <td>HC120108</td>
+      <td>&gt;0.00926</td>
+      <td>&gt;0.00926</td>
+      <td>&gt;0.00926</td>
+      <td>&gt;0.00926</td>
+    </tr>
+    <tr>
+      <td>HC070005</td>
+      <td>&gt;0.00926</td>
+      <td>&gt;0.00926</td>
+      <td>&gt;0.00926</td>
+      <td>&gt;0.00926</td>
     </tr>
   </tbody>
 </table>
