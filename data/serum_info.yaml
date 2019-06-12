@@ -1,0 +1,56 @@
+# Information about each serum sample.
+# For each sample ID, give name and description.
+# If relevant, also give species and vaccination (or infection) info.
+
+#------------------------------
+# Controls:
+
+mock:
+  name: no-serum
+  description: no-serum control
+  group: mock
+
+plasmid:
+  name: plasmid
+  description: plasmid used as control to estimate sequencing error rate
+  group: plasmid
+
+#------------------------------
+# Serum samples from Oxford University Clinical Research Unit (OUCRU) in Ho Chi Minh City 
+
+HC070097:
+  name: HC070097
+  description: serum from OUCRU in Ho Chi Minh City, Vietnam
+  group: adult_high_bind
+
+HC070021:
+  name: HC070021
+  description: serum from OUCRU in Ho Chi Minh City, Vietnam
+  group: child_high_bind
+
+HC070041:
+  name: HC070041
+  description: serum from OUCRU in Ho Chi Minh City, Vietnam
+  group: child_high_bind
+  
+HC150036:
+  name: HC150036
+  description: serum from OUCRU in Ho Chi Minh City, Vietnam
+  group: child_high_bind
+  
+HC150044:
+  name: HC150044
+  description: serum from OUCRU in Ho Chi Minh City, Vietnam
+  group: child_high_bind  
+  
+
+#------------------------------
+
+# VIDD pool
+
+VIDDpool:
+  name: VIDD pool
+  species: human
+  description: pooled Hutch VIDD samples (VIDD1, VIDD2, VIDD4, and VIDD5)
+  group: human
+

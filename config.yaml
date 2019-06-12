@@ -1,10 +1,79 @@
 # Configuration for analysis
 
-# information on serum samples
-serum_info: data/serum_info.csv
+# configuration file
+
+# information on sera and samples
+serum_info: data/serum_info.yaml
+sample_list: data/sample_list.csv
+
+# wildtype sequence, and map of sequential to standard HA numbering
+refseq: data/Perth09_HA_reference.fa
+renumbering_scheme: data/H3renumbering_scheme.csv
+
+# where to get the sequencing data,
+# can be either *SRA_accession* or *R1*
+seq_data_source: R1
+
+# The following arguments are needed only if `seq_data_source`
+# is `SRA_accession`:
+fastq_dir: results/FASTQ_files  # download FASTQ files here
+fastq_dump: fastq-dump  # path to fastq-dump
+# Next two arguments give paths for Aspera download program / key on Hutch
+# server; you will need to update with paths for your computer. If you
+# want to use fastq-dump for downloads (slower) set both of these to "null"
+ascp: /app/aspera-connect/3.7.5/bin/ascp
+asperakey: /app/aspera-connect/3.7.5/etc/asperaweb_id_dsa.openssh
+
+# alignment specs for barcoded subamplicon sequencing:
+# https://jbloomlab.github.io/dms_tools2/bcsubamp.html
+alignspecs: >- 
+              1,285,38,40
+              286,567,33,34
+              568,852,34,30
+              853,1137,34,31
+              1138,1422,36,29
+              1423,1701,39,44
+R1trim: 200
+R2trim: 165
+
+# max number of cpus to use
+ncpus: 16
+
+# Should dms_tools2 programs use existing output if it exists?
+use_existing: 'yes'
+
+# Do we average across replicates using "mean" or "median"?
+avg_type: median
+
+# file with natural sequences
+natseqs: data/human_H3N2_HA_2007-2018.fasta.gz
 
 # information on neutralization assays against wildtype
 wt_neut_config: data/wt_neut_config.yaml
 
-# results directories
+# configuration for fine-tuned figures of logo plots and neut curves
+figure_config: data/figure_config.yaml
+
+# template notebook for mapping selection on structure
+map_on_struct_template: map_on_struct_template.ipynb
+pdb_id: 4o5n  # PDB structure ID
+site_to_pdb: data/H3_site_to_PDB_4o5n.csv  # map site to PDB chain / site
+
+# names of results directories
+countsdir: results/codoncounts  # counts of mutations
+renumbcountsdir: results/renumbered_codoncounts  # counts w/ renumbered sites
+selectiontabledir: results/selection_tables  # tables with info on selections
+diffseldir: results/diffsel  # diffsel for all samples
+avgdiffseldir: results/avgdiffsel  # diffsel average across libraries
+avgdiffsel_sigsites_dir: results/avgdiffsel/sigsites  # calling "significant sites"
+avgdiffsel_zoom_dir: results/avgdiffsel/zoomed_plots  # zoom of average diffsel
+avgdiffsel_reps_dir: results/avgdiffsel/replicates  # replicates that go into average
+avgdiffsel_full_dir: results/avgdiffsel/full_logo_plots  # full logo plots of average diffsel
+natseqs_dir: results/natseqs  # results related to analysis of natural sequences
+neutresultsdir: results/neutralization_assays # results of neutralization assays
+structsdir: results/structs  # structure-related images
+figsdir: results/figures  # additional customized figures
+finalfigsdir: results/figures/final  # final figures for paper
+notebookdir: results/notebooks  # notebooks
 wt_neut_and_bind_outdir: results/wt_neut_and_bind
+
