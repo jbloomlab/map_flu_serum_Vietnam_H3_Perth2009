@@ -1,9 +1,9 @@
 sample,serum,library,date,serum_dilution,percent_infectivity,R1
-HC070097,HC070097,lib2,2019-06-06,0.0.001604,0.0233,/shared/ngs/illumina/bloom_lab/190606_D00300_0758_BH2CN3BCX3/Unaligned/Project_bloom_lab/Sample_HC070097/*R1*.fastq.gz
-HC070021,HC070021,lib2,2019-06-06,0.0007648,0.1233,/shared/ngs/illumina/bloom_lab/190606_D00300_0758_BH2CN3BCX3/Unaligned/Project_bloom_lab/Sample_HC070021/*R1*.fastq.gz
-HC070041,HC070041,lib2,2019-06-06,0.003396,0.0028,/shared/ngs/illumina/bloom_lab/190606_D00300_0758_BH2CN3BCX3/Unaligned/Project_bloom_lab/Sample_HC070041/*R1*.fastq.gz
-HC150036,HC150036,lib2,2019-06-06,0.0024,0.0518,/shared/ngs/illumina/bloom_lab/190606_D00300_0758_BH2CN3BCX3/Unaligned/Project_bloom_lab/Sample_HC150036/*R1*.fastq.gz
-HC150044,HC150044,lib2,2019-06-06,0.00242,0.0565,/shared/ngs/illumina/bloom_lab/190606_D00300_0758_BH2CN3BCX3/Unaligned/Project_bloom_lab/Sample_HC150044/*R1*.fastq.gz
+HC070097,HC070097,lib2,2019-06-06,0.0.001604,2.33,/shared/ngs/illumina/bloom_lab/190606_D00300_0758_BH2CN3BCX3/Unaligned/Project_bloom_lab/Sample_HC070097/*R1*.fastq.gz
+HC070021,HC070021,lib2,2019-06-06,0.0007648,12.33,/shared/ngs/illumina/bloom_lab/190606_D00300_0758_BH2CN3BCX3/Unaligned/Project_bloom_lab/Sample_HC070021/*R1*.fastq.gz
+HC070041,HC070041,lib2,2019-06-06,0.003396,0.28,/shared/ngs/illumina/bloom_lab/190606_D00300_0758_BH2CN3BCX3/Unaligned/Project_bloom_lab/Sample_HC070041/*R1*.fastq.gz
+HC150036,HC150036,lib2,2019-06-06,0.0024,5.18,/shared/ngs/illumina/bloom_lab/190606_D00300_0758_BH2CN3BCX3/Unaligned/Project_bloom_lab/Sample_HC150036/*R1*.fastq.gz
+HC150044,HC150044,lib2,2019-06-06,0.00242,5.65,/shared/ngs/illumina/bloom_lab/190606_D00300_0758_BH2CN3BCX3/Unaligned/Project_bloom_lab/Sample_HC150044/*R1*.fastq.gz
 Lib5mock,mock,lib2,2019-06-06,,100.0,/shared/ngs/illumina/bloom_lab/190606_D00300_0758_BH2CN3BCX3/Unaligned/Project_bloom_lab/Sample_Lib5mock/*R1*.fastq.gz
 mutPlasmid,plasmid,lib2,2019-06-06,,,/shared/ngs/illumina/bloom_lab/190606_D00300_0758_BH2CN3BCX3/Unaligned/Project_bloom_lab/Sample_mutPlasmid/*R1*.fastq.gz
-VIDDpool,VIDD pool,lib2,2019-06-06,,0.0952,/shared/ngs/illumina/bloom_lab/190606_D00300_0758_BH2CN3BCX3/Unaligned/Project_bloom_lab/Sample_VIDDpool/*R1*.fastq.gz
+VIDDpool,VIDDpool,lib2,2019-06-06,,9.52,/shared/ngs/illumina/bloom_lab/190606_D00300_0758_BH2CN3BCX3/Unaligned/Project_bloom_lab/Sample_VIDDpool/*R1*.fastq.gz

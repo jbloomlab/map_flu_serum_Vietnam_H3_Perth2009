@@ -1,6 +1,5 @@
 # Information about each serum sample.
 # For each sample ID, give name and description.
-# If relevant, also give species and vaccination (or infection) info.
 
 #------------------------------
 # Controls:
@@ -50,7 +49,6 @@ HC150044:
 
 VIDDpool:
   name: VIDD pool
-  species: human
   description: pooled Hutch VIDD samples (VIDD1, VIDD2, VIDD4, and VIDD5)
   group: human
 
