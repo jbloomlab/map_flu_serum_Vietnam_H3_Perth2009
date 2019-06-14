@@ -1,7 +1,5 @@
 # Configuration for analysis
 
-# configuration file
-
 # information on sera and samples
 serum_info: data/serum_info.yaml
 sample_list: data/sample_list.csv
