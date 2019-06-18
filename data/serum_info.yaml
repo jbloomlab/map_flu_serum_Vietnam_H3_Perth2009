@@ -42,9 +42,20 @@ HC150044:
   description: serum from OUCRU in Ho Chi Minh City, Vietnam
   group: child_high_bind  
   
+#------------------------------
+# Human sera from Terry Stevens-Ayers in Hutch VIDD Division
+
+VIDD1:
+  name: 2010-age-21
+  description: collected at Hutch in 2/2010 from person born in 1989
+  group: VIDD_sera
+
+VIDD2:
+  name: 2009-age-53
+  description: collected at Hutch in 1/2009 from person born in 1956
+  group: VIDD_sera
 
 #------------------------------
-
 # VIDD pool
 
 VIDDpool:
