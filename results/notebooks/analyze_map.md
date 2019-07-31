@@ -56,7 +56,7 @@ print(f"Using dms_tools2 version {dms_tools2.__version__}")
 print(f"Using dmslogo version {dmslogo.__version__}")
 ```
 
-    Using dms_tools2 version 2.4.12
+    Using dms_tools2 version 2.5.0
     Using dmslogo version 0.2.3
 
 
@@ -289,59 +289,65 @@ display(HTML(sera.to_html(index=False)))
   <thead>
     <tr style="text-align: right;">
       <th>serum</th>
+      <th>serum_name</th>
       <th>serum_description</th>
       <th>serum_group</th>
-      <th>serum_name</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <td>mock</td>
+      <td>no-serum</td>
       <td>no-serum control</td>
       <td>mock</td>
-      <td>no-serum</td>
     </tr>
     <tr>
+      <td>plasmid</td>
       <td>plasmid</td>
       <td>plasmid used as control to estimate sequencing error rate</td>
       <td>plasmid</td>
-      <td>plasmid</td>
     </tr>
     <tr>
       <td>HC070097</td>
+      <td>age-31.5</td>
       <td>serum from OUCRU in Ho Chi Minh City, Vietnam</td>
       <td>adult_high_bind</td>
-      <td>HC070097</td>
     </tr>
     <tr>
       <td>HC070021</td>
+      <td>age-2.4</td>
       <td>serum from OUCRU in Ho Chi Minh City, Vietnam</td>
       <td>child_high_bind</td>
-      <td>HC070021</td>
     </tr>
     <tr>
       <td>HC070041</td>
+      <td>age-2.1</td>
       <td>serum from OUCRU in Ho Chi Minh City, Vietnam</td>
       <td>child_high_bind</td>
-      <td>HC070041</td>
     </tr>
     <tr>
       <td>HC150036</td>
+      <td>age-2.2</td>
       <td>serum from OUCRU in Ho Chi Minh City, Vietnam</td>
       <td>child_high_bind</td>
-      <td>HC150036</td>
     </tr>
     <tr>
       <td>HC150044</td>
+      <td>age-3.4</td>
       <td>serum from OUCRU in Ho Chi Minh City, Vietnam</td>
       <td>child_high_bind</td>
-      <td>HC150044</td>
+    </tr>
+    <tr>
+      <td>VIDD4</td>
+      <td>2009-age-64-Hutch</td>
+      <td>collected at Hutch in 11/2008 from person born in 1945</td>
+      <td>VIDD_sera</td>
     </tr>
     <tr>
       <td>VIDDpool</td>
+      <td>VIDD pool</td>
       <td>pooled Hutch VIDD samples (VIDD1, VIDD2, VIDD4, and VIDD5)</td>
       <td>human</td>
-      <td>VIDD pool</td>
     </tr>
   </tbody>
 </table>
@@ -380,80 +386,99 @@ display(HTML(samples.to_html(index=False)))
       <th>serum_dilution</th>
       <th>percent_infectivity</th>
       <th>R1</th>
+      <th>SRA_accession</th>
     </tr>
   </thead>
   <tbody>
     <tr>
+      <td>L5-HC070097</td>
       <td>HC070097</td>
-      <td>HC070097</td>
       <td>lib2</td>
-      <td>2019-06-06</td>
-      <td>0.0.001604</td>
-      <td>2.33</td>
-      <td>/shared/ngs/illumina/bloom_lab/190606_D00300_0758_BH2CN3BCX3/Unaligned/Project_bloom_lab/Sample_HC070097/*R1*.fastq.gz</td>
+      <td>2019-07-29</td>
+      <td>0.000401</td>
+      <td>1.88</td>
+      <td>/fh/fast/bloom_j/SR/ngs/illumina/reguia/190725_D00300_0788_AH3JCJBCX3_lane1/Unaligned/Project_reguia/Sample_L5-HC070097/*R1*.fastq.gz</td>
+      <td>NaN</td>
     </tr>
     <tr>
+      <td>L5-HC070021</td>
       <td>HC070021</td>
-      <td>HC070021</td>
       <td>lib2</td>
-      <td>2019-06-06</td>
-      <td>0.0007648</td>
-      <td>12.33</td>
-      <td>/shared/ngs/illumina/bloom_lab/190606_D00300_0758_BH2CN3BCX3/Unaligned/Project_bloom_lab/Sample_HC070021/*R1*.fastq.gz</td>
+      <td>2019-07-29</td>
+      <td>0.000400</td>
+      <td>4.46</td>
+      <td>/fh/fast/bloom_j/SR/ngs/illumina/reguia/190725_D00300_0788_AH3JCJBCX3_lane1/Unaligned/Project_reguia/Sample_L5-HC070021/*R1*.fastq.gz</td>
+      <td>NaN</td>
     </tr>
     <tr>
+      <td>L5-HC070041</td>
       <td>HC070041</td>
-      <td>HC070041</td>
       <td>lib2</td>
-      <td>2019-06-06</td>
-      <td>0.003396</td>
-      <td>0.28</td>
-      <td>/shared/ngs/illumina/bloom_lab/190606_D00300_0758_BH2CN3BCX3/Unaligned/Project_bloom_lab/Sample_HC070041/*R1*.fastq.gz</td>
+      <td>2019-07-29</td>
+      <td>0.000625</td>
+      <td>2.02</td>
+      <td>/fh/fast/bloom_j/SR/ngs/illumina/reguia/190725_D00300_0788_AH3JCJBCX3_lane1/Unaligned/Project_reguia/Sample_L5-HC070041/*R1*.fastq.gz</td>
+      <td>NaN</td>
     </tr>
     <tr>
+      <td>L5-HC150036</td>
       <td>HC150036</td>
-      <td>HC150036</td>
       <td>lib2</td>
-      <td>2019-06-06</td>
-      <td>0.0024</td>
-      <td>5.18</td>
-      <td>/shared/ngs/illumina/bloom_lab/190606_D00300_0758_BH2CN3BCX3/Unaligned/Project_bloom_lab/Sample_HC150036/*R1*.fastq.gz</td>
+      <td>2019-07-29</td>
+      <td>0.000750</td>
+      <td>3.00</td>
+      <td>/fh/fast/bloom_j/SR/ngs/illumina/reguia/190725_D00300_0788_AH3JCJBCX3_lane1/Unaligned/Project_reguia/Sample_L5-HC150036/*R1*.fastq.gz</td>
+      <td>NaN</td>
     </tr>
     <tr>
-      <td>HC150044</td>
+      <td>L5-HC150044</td>
       <td>HC150044</td>
       <td>lib2</td>
-      <td>2019-06-06</td>
-      <td>0.00242</td>
-      <td>5.65</td>
-      <td>/shared/ngs/illumina/bloom_lab/190606_D00300_0758_BH2CN3BCX3/Unaligned/Project_bloom_lab/Sample_HC150044/*R1*.fastq.gz</td>
+      <td>2019-07-29</td>
+      <td>0.000750</td>
+      <td>7.88</td>
+      <td>/fh/fast/bloom_j/SR/ngs/illumina/reguia/190725_D00300_0788_AH3JCJBCX3_lane1/Unaligned/Project_reguia/Sample_L5-HC150044/*R1*.fastq.gz</td>
+      <td>NaN</td>
     </tr>
     <tr>
-      <td>Lib5mock</td>
+      <td>L5-VIDD-pool</td>
+      <td>VIDDpool</td>
+      <td>lib2</td>
+      <td>2019-07-29</td>
+      <td>NaN</td>
+      <td>8.99</td>
+      <td>/fh/fast/bloom_j/SR/ngs/illumina/reguia/190725_D00300_0788_AH3JCJBCX3_lane1/Unaligned/Project_reguia/Sample_L5-VIDD-pool/*R1*.fastq.gz</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>L5-VIDD4</td>
+      <td>VIDD4</td>
+      <td>lib2</td>
+      <td>2019-07-29</td>
+      <td>0.001675</td>
+      <td>1.31</td>
+      <td>/fh/fast/bloom_j/SR/ngs/illumina/reguia/190725_D00300_0788_AH3JCJBCX3_lane1/Unaligned/Project_reguia/Sample_L5-VIDD4/*R1*.fastq.gz</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>L5mock0729</td>
       <td>mock</td>
       <td>lib2</td>
-      <td>2019-06-06</td>
+      <td>2019-07-29</td>
       <td>NaN</td>
-      <td>100.00</td>
-      <td>/shared/ngs/illumina/bloom_lab/190606_D00300_0758_BH2CN3BCX3/Unaligned/Project_bloom_lab/Sample_Lib5mock/*R1*.fastq.gz</td>
+      <td>NaN</td>
+      <td>/fh/fast/bloom_j/SR/ngs/illumina/reguia/190725_D00300_0788_AH3JCJBCX3_lane1/Unaligned/Project_reguia/Sample_L5mock/*R1*.fastq.gz</td>
+      <td>NaN</td>
     </tr>
     <tr>
-      <td>mutPlasmid</td>
+      <td>WTplasmid0729</td>
       <td>plasmid</td>
       <td>lib2</td>
-      <td>2019-06-06</td>
+      <td>2019-07-29</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>/shared/ngs/illumina/bloom_lab/190606_D00300_0758_BH2CN3BCX3/Unaligned/Project_bloom_lab/Sample_mutPlasmid/*R1*.fastq.gz</td>
-    </tr>
-    <tr>
-      <td>VIDDpool</td>
-      <td>VIDDpool</td>
-      <td>lib2</td>
-      <td>2019-06-06</td>
+      <td>/fh/fast/bloom_j/SR/ngs/illumina/reguia/190725_D00300_0788_AH3JCJBCX3_lane1/Unaligned/Project_reguia/Sample_WTplasmid/*R1*.fastq.gz</td>
       <td>NaN</td>
-      <td>9.52</td>
-      <td>/shared/ngs/illumina/bloom_lab/190606_D00300_0758_BH2CN3BCX3/Unaligned/Project_bloom_lab/Sample_VIDDpool/*R1*.fastq.gz</td>
     </tr>
   </tbody>
 </table>
@@ -534,7 +559,7 @@ bcsubamp_batchfile = os.path.join(config['countsdir'], 'batch.csv')
 (samples
  .rename(columns={'sample': 'name'})
  [['name', 'R1']]
- .to_csv(bcsubamp_batchfile)
+ .to_csv(bcsubamp_batchfile, index=False)
  )
 
 print(f"Creating batch file {bcsubamp_batchfile}")
@@ -555,7 +580,7 @@ cmds = ['dms2_batch_bcsubamp',
         '--R2trim', str(config['R2trim']),
         '--outdir', config['countsdir'],
         '--summaryprefix', 'summary',
-        '--ncpus', str(config['ncpus']),
+        '--ncpus', '2',
         '--use_existing', config['use_existing'],
         ]
 
@@ -568,7 +593,7 @@ print('Completed running dms2_batch_bcsubamp.')
 ```
 
     Running dms2_batch_bcsubamp with this command:
-    dms2_batch_bcsubamp --batchfile results/codoncounts/batch.csv --refseq data/Perth09_HA_reference.fa --alignspecs 1,285,38,40 286,567,33,34 568,852,34,30 853,1137,34,31 1138,1422,36,29 1423,1701,39,44 --R1trim 200 --R2trim 165 --outdir results/codoncounts --summaryprefix summary --ncpus 16 --use_existing yes
+    dms2_batch_bcsubamp --batchfile results/codoncounts/batch.csv --refseq data/Perth09_HA_reference.fa --alignspecs 1,285,38,40 286,567,33,34 568,852,34,30 853,1137,34,31 1138,1422,36,29 1423,1701,39,44 --R1trim 200 --R2trim 165 --outdir results/codoncounts --summaryprefix summary --ncpus 2 --use_existing yes
     Completed running dms2_batch_bcsubamp.
 
 
@@ -779,7 +804,7 @@ print(f"Tabulated information for {len(selections)} selections:")
 display(HTML(selections.to_html(index=False)))
 ```
 
-    Tabulated information for 6 selections:
+    Tabulated information for 7 selections:
 
 
 
@@ -796,108 +821,124 @@ display(HTML(selections.to_html(index=False)))
       <th>date</th>
       <th>serum_dilution</th>
       <th>percent_infectivity</th>
+      <th>serum_name</th>
       <th>serum_description</th>
       <th>serum_group</th>
-      <th>serum_name</th>
       <th>name_formatted</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>HC070097</td>
-      <td>lib2-2.3</td>
-      <td>HC070097</td>
-      <td>Lib5mock</td>
-      <td>mutPlasmid</td>
+      <td>age-31.5</td>
+      <td>lib2-1.9</td>
+      <td>L5-HC070097</td>
+      <td>L5mock0729</td>
+      <td>WTplasmid0729</td>
       <td>HC070097</td>
       <td>lib2</td>
-      <td>2019-06-06</td>
-      <td>0.0.001604</td>
-      <td>2.33</td>
+      <td>2019-07-29</td>
+      <td>0.000401</td>
+      <td>1.88</td>
+      <td>age-31.5</td>
       <td>serum from OUCRU in Ho Chi Minh City, Vietnam</td>
       <td>adult_high_bind</td>
-      <td>HC070097</td>
-      <td>lib2, 2.3% infectivity</td>
+      <td>lib2, 1.9% infectivity</td>
     </tr>
     <tr>
-      <td>HC070021</td>
-      <td>lib2-12</td>
-      <td>HC070021</td>
-      <td>Lib5mock</td>
-      <td>mutPlasmid</td>
+      <td>age-2.4</td>
+      <td>lib2-4.5</td>
+      <td>L5-HC070021</td>
+      <td>L5mock0729</td>
+      <td>WTplasmid0729</td>
       <td>HC070021</td>
       <td>lib2</td>
-      <td>2019-06-06</td>
-      <td>0.0007648</td>
-      <td>12.33</td>
+      <td>2019-07-29</td>
+      <td>0.000400</td>
+      <td>4.46</td>
+      <td>age-2.4</td>
       <td>serum from OUCRU in Ho Chi Minh City, Vietnam</td>
       <td>child_high_bind</td>
-      <td>HC070021</td>
-      <td>lib2, 12% infectivity</td>
+      <td>lib2, 4.5% infectivity</td>
     </tr>
     <tr>
-      <td>HC070041</td>
-      <td>lib2-0.28</td>
-      <td>HC070041</td>
-      <td>Lib5mock</td>
-      <td>mutPlasmid</td>
+      <td>age-2.1</td>
+      <td>lib2-2.0</td>
+      <td>L5-HC070041</td>
+      <td>L5mock0729</td>
+      <td>WTplasmid0729</td>
       <td>HC070041</td>
       <td>lib2</td>
-      <td>2019-06-06</td>
-      <td>0.003396</td>
-      <td>0.28</td>
+      <td>2019-07-29</td>
+      <td>0.000625</td>
+      <td>2.02</td>
+      <td>age-2.1</td>
       <td>serum from OUCRU in Ho Chi Minh City, Vietnam</td>
       <td>child_high_bind</td>
-      <td>HC070041</td>
-      <td>lib2, 0.28% infectivity</td>
+      <td>lib2, 2.0% infectivity</td>
     </tr>
     <tr>
-      <td>HC150036</td>
-      <td>lib2-5.2</td>
-      <td>HC150036</td>
-      <td>Lib5mock</td>
-      <td>mutPlasmid</td>
+      <td>age-2.2</td>
+      <td>lib2-3.0</td>
+      <td>L5-HC150036</td>
+      <td>L5mock0729</td>
+      <td>WTplasmid0729</td>
       <td>HC150036</td>
       <td>lib2</td>
-      <td>2019-06-06</td>
-      <td>0.0024</td>
-      <td>5.18</td>
+      <td>2019-07-29</td>
+      <td>0.000750</td>
+      <td>3.00</td>
+      <td>age-2.2</td>
       <td>serum from OUCRU in Ho Chi Minh City, Vietnam</td>
       <td>child_high_bind</td>
-      <td>HC150036</td>
-      <td>lib2, 5.2% infectivity</td>
+      <td>lib2, 3.0% infectivity</td>
     </tr>
     <tr>
-      <td>HC150044</td>
-      <td>lib2-5.7</td>
-      <td>HC150044</td>
-      <td>Lib5mock</td>
-      <td>mutPlasmid</td>
+      <td>age-3.4</td>
+      <td>lib2-7.9</td>
+      <td>L5-HC150044</td>
+      <td>L5mock0729</td>
+      <td>WTplasmid0729</td>
       <td>HC150044</td>
       <td>lib2</td>
-      <td>2019-06-06</td>
-      <td>0.00242</td>
-      <td>5.65</td>
+      <td>2019-07-29</td>
+      <td>0.000750</td>
+      <td>7.88</td>
+      <td>age-3.4</td>
       <td>serum from OUCRU in Ho Chi Minh City, Vietnam</td>
       <td>child_high_bind</td>
-      <td>HC150044</td>
-      <td>lib2, 5.7% infectivity</td>
+      <td>lib2, 7.9% infectivity</td>
     </tr>
     <tr>
       <td>VIDD pool</td>
-      <td>lib2-9.5</td>
-      <td>VIDDpool</td>
-      <td>Lib5mock</td>
-      <td>mutPlasmid</td>
+      <td>lib2-9.0</td>
+      <td>L5-VIDD-pool</td>
+      <td>L5mock0729</td>
+      <td>WTplasmid0729</td>
       <td>VIDDpool</td>
       <td>lib2</td>
-      <td>2019-06-06</td>
+      <td>2019-07-29</td>
       <td>NaN</td>
-      <td>9.52</td>
+      <td>8.99</td>
+      <td>VIDD pool</td>
       <td>pooled Hutch VIDD samples (VIDD1, VIDD2, VIDD4, and VIDD5)</td>
       <td>human</td>
-      <td>VIDD pool</td>
-      <td>lib2, 9.5% infectivity</td>
+      <td>lib2, 9.0% infectivity</td>
+    </tr>
+    <tr>
+      <td>2009-age-64-Hutch</td>
+      <td>lib2-1.3</td>
+      <td>L5-VIDD4</td>
+      <td>L5mock0729</td>
+      <td>WTplasmid0729</td>
+      <td>VIDD4</td>
+      <td>lib2</td>
+      <td>2019-07-29</td>
+      <td>0.001675</td>
+      <td>1.31</td>
+      <td>2009-age-64-Hutch</td>
+      <td>collected at Hutch in 11/2008 from person born in 1945</td>
+      <td>VIDD_sera</td>
+      <td>lib2, 1.3% infectivity</td>
     </tr>
   </tbody>
 </table>
@@ -927,7 +968,7 @@ cmds = ['dms2_batch_diffsel',
         '--outdir', outdir,
         '--indir', config['renumbcountsdir'],
         '--use_existing', config['use_existing'],
-        '--ncpus', str(config['ncpus'])
+        '--ncpus', str(config['ncpus']),
         ]
 
 print(f"Computing diffsel using dms2_batch_diffsel with command:\n{' '.join(cmds)}")
@@ -946,9 +987,9 @@ for selfile in ['mutdiffsel', 'sitediffsel']:
 ```
 
     Computing diffsel using dms2_batch_diffsel with command:
-    dms2_batch_diffsel --summaryprefix summary --batchfile results/diffsel/batch.csv --outdir results/diffsel --indir results/renumbered_codoncounts --use_existing yes --ncpus 2
-    Created 6 mutdiffsel files, adding to `selections` data frame in column mutdiffsel_file
-    Created 6 sitediffsel files, adding to `selections` data frame in column sitediffsel_file
+    dms2_batch_diffsel --summaryprefix summary --batchfile results/diffsel/batch.csv --outdir results/diffsel --indir results/renumbered_codoncounts --use_existing yes --ncpus 16
+    Created 7 mutdiffsel files, adding to `selections` data frame in column mutdiffsel_file
+    Created 7 sitediffsel files, adding to `selections` data frame in column sitediffsel_file
 
 
 ### Get all selection information in one data frame
@@ -971,7 +1012,7 @@ print(f"sel_df has {len(sel_df)} rows. Here are the first few:")
 display(HTML(sel_df.head(n=5).to_html(index=False)))
 ```
 
-    sel_df has 67920 rows. Here are the first few:
+    sel_df has 79240 rows. Here are the first few:
 
 
 
@@ -988,9 +1029,9 @@ display(HTML(sel_df.head(n=5).to_html(index=False)))
       <th>date</th>
       <th>serum_dilution</th>
       <th>percent_infectivity</th>
+      <th>serum_name</th>
       <th>serum_description</th>
       <th>serum_group</th>
-      <th>serum_name</th>
       <th>name_formatted</th>
       <th>site</th>
       <th>wildtype</th>
@@ -1006,134 +1047,134 @@ display(HTML(sel_df.head(n=5).to_html(index=False)))
   </thead>
   <tbody>
     <tr>
-      <td>HC070097</td>
-      <td>lib2-2.3</td>
-      <td>HC070097</td>
-      <td>Lib5mock</td>
-      <td>mutPlasmid</td>
+      <td>age-31.5</td>
+      <td>lib2-1.9</td>
+      <td>L5-HC070097</td>
+      <td>L5mock0729</td>
+      <td>WTplasmid0729</td>
       <td>HC070097</td>
       <td>lib2</td>
-      <td>2019-06-06</td>
-      <td>0.0.001604</td>
-      <td>2.33</td>
+      <td>2019-07-29</td>
+      <td>0.000401</td>
+      <td>1.88</td>
+      <td>age-31.5</td>
       <td>serum from OUCRU in Ho Chi Minh City, Vietnam</td>
       <td>adult_high_bind</td>
-      <td>HC070097</td>
-      <td>lib2, 2.3% infectivity</td>
-      <td>119</td>
+      <td>lib2, 1.9% infectivity</td>
+      <td>(HA2)66</td>
+      <td>I</td>
       <td>E</td>
-      <td>R</td>
-      <td>4.940934</td>
-      <td>13.343483</td>
-      <td>12.910262</td>
-      <td>-0.433222</td>
-      <td>4.940934</td>
-      <td>-0.260085</td>
-      <td>134</td>
+      <td>5.366323</td>
+      <td>11.189418</td>
+      <td>7.965366</td>
+      <td>-3.224052</td>
+      <td>5.366323</td>
+      <td>-0.99679</td>
+      <td>410</td>
     </tr>
     <tr>
-      <td>HC070097</td>
-      <td>lib2-2.3</td>
-      <td>HC070097</td>
-      <td>Lib5mock</td>
-      <td>mutPlasmid</td>
+      <td>age-31.5</td>
+      <td>lib2-1.9</td>
+      <td>L5-HC070097</td>
+      <td>L5mock0729</td>
+      <td>WTplasmid0729</td>
       <td>HC070097</td>
       <td>lib2</td>
-      <td>2019-06-06</td>
-      <td>0.0.001604</td>
-      <td>2.33</td>
+      <td>2019-07-29</td>
+      <td>0.000401</td>
+      <td>1.88</td>
+      <td>age-31.5</td>
       <td>serum from OUCRU in Ho Chi Minh City, Vietnam</td>
       <td>adult_high_bind</td>
-      <td>HC070097</td>
-      <td>lib2, 2.3% infectivity</td>
-      <td>119</td>
-      <td>E</td>
-      <td>G</td>
-      <td>2.661194</td>
-      <td>13.343483</td>
-      <td>12.910262</td>
-      <td>-0.433222</td>
-      <td>4.940934</td>
-      <td>-0.260085</td>
-      <td>134</td>
+      <td>lib2, 1.9% infectivity</td>
+      <td>(HA2)66</td>
+      <td>I</td>
+      <td>W</td>
+      <td>1.832342</td>
+      <td>11.189418</td>
+      <td>7.965366</td>
+      <td>-3.224052</td>
+      <td>5.366323</td>
+      <td>-0.99679</td>
+      <td>410</td>
     </tr>
     <tr>
-      <td>HC070097</td>
-      <td>lib2-2.3</td>
-      <td>HC070097</td>
-      <td>Lib5mock</td>
-      <td>mutPlasmid</td>
+      <td>age-31.5</td>
+      <td>lib2-1.9</td>
+      <td>L5-HC070097</td>
+      <td>L5mock0729</td>
+      <td>WTplasmid0729</td>
       <td>HC070097</td>
       <td>lib2</td>
-      <td>2019-06-06</td>
-      <td>0.0.001604</td>
-      <td>2.33</td>
+      <td>2019-07-29</td>
+      <td>0.000401</td>
+      <td>1.88</td>
+      <td>age-31.5</td>
       <td>serum from OUCRU in Ho Chi Minh City, Vietnam</td>
       <td>adult_high_bind</td>
+      <td>lib2, 1.9% infectivity</td>
+      <td>(HA2)66</td>
+      <td>I</td>
+      <td>M</td>
+      <td>0.382144</td>
+      <td>11.189418</td>
+      <td>7.965366</td>
+      <td>-3.224052</td>
+      <td>5.366323</td>
+      <td>-0.99679</td>
+      <td>410</td>
+    </tr>
+    <tr>
+      <td>age-31.5</td>
+      <td>lib2-1.9</td>
+      <td>L5-HC070097</td>
+      <td>L5mock0729</td>
+      <td>WTplasmid0729</td>
       <td>HC070097</td>
-      <td>lib2, 2.3% infectivity</td>
-      <td>119</td>
-      <td>E</td>
+      <td>lib2</td>
+      <td>2019-07-29</td>
+      <td>0.000401</td>
+      <td>1.88</td>
+      <td>age-31.5</td>
+      <td>serum from OUCRU in Ho Chi Minh City, Vietnam</td>
+      <td>adult_high_bind</td>
+      <td>lib2, 1.9% infectivity</td>
+      <td>(HA2)66</td>
+      <td>I</td>
+      <td>V</td>
+      <td>0.276796</td>
+      <td>11.189418</td>
+      <td>7.965366</td>
+      <td>-3.224052</td>
+      <td>5.366323</td>
+      <td>-0.99679</td>
+      <td>410</td>
+    </tr>
+    <tr>
+      <td>age-31.5</td>
+      <td>lib2-1.9</td>
+      <td>L5-HC070097</td>
+      <td>L5mock0729</td>
+      <td>WTplasmid0729</td>
+      <td>HC070097</td>
+      <td>lib2</td>
+      <td>2019-07-29</td>
+      <td>0.000401</td>
+      <td>1.88</td>
+      <td>age-31.5</td>
+      <td>serum from OUCRU in Ho Chi Minh City, Vietnam</td>
+      <td>adult_high_bind</td>
+      <td>lib2, 1.9% infectivity</td>
+      <td>(HA2)66</td>
+      <td>I</td>
       <td>T</td>
-      <td>2.638478</td>
-      <td>13.343483</td>
-      <td>12.910262</td>
-      <td>-0.433222</td>
-      <td>4.940934</td>
-      <td>-0.260085</td>
-      <td>134</td>
-    </tr>
-    <tr>
-      <td>HC070097</td>
-      <td>lib2-2.3</td>
-      <td>HC070097</td>
-      <td>Lib5mock</td>
-      <td>mutPlasmid</td>
-      <td>HC070097</td>
-      <td>lib2</td>
-      <td>2019-06-06</td>
-      <td>0.0.001604</td>
-      <td>2.33</td>
-      <td>serum from OUCRU in Ho Chi Minh City, Vietnam</td>
-      <td>adult_high_bind</td>
-      <td>HC070097</td>
-      <td>lib2, 2.3% infectivity</td>
-      <td>119</td>
-      <td>E</td>
-      <td>K</td>
-      <td>0.811347</td>
-      <td>13.343483</td>
-      <td>12.910262</td>
-      <td>-0.433222</td>
-      <td>4.940934</td>
-      <td>-0.260085</td>
-      <td>134</td>
-    </tr>
-    <tr>
-      <td>HC070097</td>
-      <td>lib2-2.3</td>
-      <td>HC070097</td>
-      <td>Lib5mock</td>
-      <td>mutPlasmid</td>
-      <td>HC070097</td>
-      <td>lib2</td>
-      <td>2019-06-06</td>
-      <td>0.0.001604</td>
-      <td>2.33</td>
-      <td>serum from OUCRU in Ho Chi Minh City, Vietnam</td>
-      <td>adult_high_bind</td>
-      <td>HC070097</td>
-      <td>lib2, 2.3% infectivity</td>
-      <td>119</td>
-      <td>E</td>
-      <td>D</td>
-      <td>0.666032</td>
-      <td>13.343483</td>
-      <td>12.910262</td>
-      <td>-0.433222</td>
-      <td>4.940934</td>
-      <td>-0.260085</td>
-      <td>134</td>
+      <td>0.082078</td>
+      <td>11.189418</td>
+      <td>7.965366</td>
+      <td>-3.224052</td>
+      <td>5.366323</td>
+      <td>-0.99679</td>
+      <td>410</td>
     </tr>
   </tbody>
 </table>
@@ -1187,7 +1228,7 @@ for serum_name, serum_sel_df in sel_df.groupby('serum_name_formatted'):
 
     
     
-    ******************* HC070021 *******************
+    ******************* 2009-age-64-Hutch *******************
 
 
 
@@ -1199,7 +1240,7 @@ for serum_name, serum_sel_df in sel_df.groupby('serum_name_formatted'):
   <thead>
     <tr style="text-align: right;">
       <th>sample</th>
-      <th>lib2, 12% infectivity</th>
+      <th>lib2, 1.3% infectivity</th>
     </tr>
     <tr>
       <th>sample</th>
@@ -1208,127 +1249,7 @@ for serum_name, serum_sel_df in sel_df.groupby('serum_name_formatted'):
   </thead>
   <tbody>
     <tr>
-      <th>lib2, 12% infectivity</th>
-      <td>1.0</td>
-    </tr>
-  </tbody>
-</table>
-
-
-    
-    
-    ******************* HC070041 *******************
-
-
-
-![png](analyze_map_files/analyze_map_63_4.png)
-
-
-
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th>sample</th>
-      <th>lib2, 0.28% infectivity</th>
-    </tr>
-    <tr>
-      <th>sample</th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>lib2, 0.28% infectivity</th>
-      <td>1.0</td>
-    </tr>
-  </tbody>
-</table>
-
-
-    
-    
-    ******************* HC070097 *******************
-
-
-
-![png](analyze_map_files/analyze_map_63_7.png)
-
-
-
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th>sample</th>
-      <th>lib2, 2.3% infectivity</th>
-    </tr>
-    <tr>
-      <th>sample</th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>lib2, 2.3% infectivity</th>
-      <td>1.0</td>
-    </tr>
-  </tbody>
-</table>
-
-
-    
-    
-    ******************* HC150036 *******************
-
-
-
-![png](analyze_map_files/analyze_map_63_10.png)
-
-
-
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th>sample</th>
-      <th>lib2, 5.2% infectivity</th>
-    </tr>
-    <tr>
-      <th>sample</th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>lib2, 5.2% infectivity</th>
-      <td>1.0</td>
-    </tr>
-  </tbody>
-</table>
-
-
-    
-    
-    ******************* HC150044 *******************
-
-
-
-![png](analyze_map_files/analyze_map_63_13.png)
-
-
-
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th>sample</th>
-      <th>lib2, 5.7% infectivity</th>
-    </tr>
-    <tr>
-      <th>sample</th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>lib2, 5.7% infectivity</th>
+      <th>lib2, 1.3% infectivity</th>
       <td>1.0</td>
     </tr>
   </tbody>
@@ -1341,7 +1262,7 @@ for serum_name, serum_sel_df in sel_df.groupby('serum_name_formatted'):
 
 
 
-![png](analyze_map_files/analyze_map_63_16.png)
+![png](analyze_map_files/analyze_map_63_4.png)
 
 
 
@@ -1349,7 +1270,7 @@ for serum_name, serum_sel_df in sel_df.groupby('serum_name_formatted'):
   <thead>
     <tr style="text-align: right;">
       <th>sample</th>
-      <th>lib2, 9.5% infectivity</th>
+      <th>lib2, 9.0% infectivity</th>
     </tr>
     <tr>
       <th>sample</th>
@@ -1358,7 +1279,157 @@ for serum_name, serum_sel_df in sel_df.groupby('serum_name_formatted'):
   </thead>
   <tbody>
     <tr>
-      <th>lib2, 9.5% infectivity</th>
+      <th>lib2, 9.0% infectivity</th>
+      <td>1.0</td>
+    </tr>
+  </tbody>
+</table>
+
+
+    
+    
+    ******************* age-2.1 *******************
+
+
+
+![png](analyze_map_files/analyze_map_63_7.png)
+
+
+
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>sample</th>
+      <th>lib2, 2.0% infectivity</th>
+    </tr>
+    <tr>
+      <th>sample</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>lib2, 2.0% infectivity</th>
+      <td>1.0</td>
+    </tr>
+  </tbody>
+</table>
+
+
+    
+    
+    ******************* age-2.2 *******************
+
+
+
+![png](analyze_map_files/analyze_map_63_10.png)
+
+
+
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>sample</th>
+      <th>lib2, 3.0% infectivity</th>
+    </tr>
+    <tr>
+      <th>sample</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>lib2, 3.0% infectivity</th>
+      <td>1.0</td>
+    </tr>
+  </tbody>
+</table>
+
+
+    
+    
+    ******************* age-2.4 *******************
+
+
+
+![png](analyze_map_files/analyze_map_63_13.png)
+
+
+
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>sample</th>
+      <th>lib2, 4.5% infectivity</th>
+    </tr>
+    <tr>
+      <th>sample</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>lib2, 4.5% infectivity</th>
+      <td>1.0</td>
+    </tr>
+  </tbody>
+</table>
+
+
+    
+    
+    ******************* age-3.4 *******************
+
+
+
+![png](analyze_map_files/analyze_map_63_16.png)
+
+
+
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>sample</th>
+      <th>lib2, 7.9% infectivity</th>
+    </tr>
+    <tr>
+      <th>sample</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>lib2, 7.9% infectivity</th>
+      <td>1.0</td>
+    </tr>
+  </tbody>
+</table>
+
+
+    
+    
+    ******************* age-31.5 *******************
+
+
+
+![png](analyze_map_files/analyze_map_63_19.png)
+
+
+
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>sample</th>
+      <th>lib2, 1.9% infectivity</th>
+    </tr>
+    <tr>
+      <th>sample</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>lib2, 1.9% infectivity</th>
       <td>1.0</td>
     </tr>
   </tbody>
@@ -1407,7 +1478,7 @@ sel_df = sel_df.merge(selections[['serum_name_formatted', 'name', 'retained']],
                       validate='many_to_one')
 ```
 
-    Retaining 6 of 6
+    Retaining 7 of 7
 
 
 Plot the samples to retain and their percent infectivity.
@@ -1491,31 +1562,36 @@ for valtype in ['percent_infectivity', 'serum_dilution']:
   </thead>
   <tbody>
     <tr>
+      <th>VIDD_sera</th>
+      <th>2009-age-64-Hutch</th>
+      <td>1.31</td>
+    </tr>
+    <tr>
       <th>adult_high_bind</th>
-      <th>HC070097</th>
-      <td>2.33</td>
+      <th>age-31.5</th>
+      <td>1.88</td>
     </tr>
     <tr>
       <th rowspan="4" valign="top">child_high_bind</th>
-      <th>HC070021</th>
-      <td>12.33</td>
+      <th>age-2.1</th>
+      <td>2.02</td>
     </tr>
     <tr>
-      <th>HC070041</th>
-      <td>0.28</td>
+      <th>age-2.2</th>
+      <td>3.00</td>
     </tr>
     <tr>
-      <th>HC150036</th>
-      <td>5.18</td>
+      <th>age-2.4</th>
+      <td>4.46</td>
     </tr>
     <tr>
-      <th>HC150044</th>
-      <td>5.65</td>
+      <th>age-3.4</th>
+      <td>7.88</td>
     </tr>
     <tr>
       <th>human</th>
       <th>VIDD pool</th>
-      <td>9.52</td>
+      <td>8.99</td>
     </tr>
   </tbody>
 </table>
@@ -1542,31 +1618,31 @@ for valtype in ['percent_infectivity', 'serum_dilution']:
   </thead>
   <tbody>
     <tr>
+      <th>VIDD_sera</th>
+      <th>2009-age-64-Hutch</th>
+      <td>0.001675</td>
+    </tr>
+    <tr>
       <th>adult_high_bind</th>
-      <th>HC070097</th>
-      <td>0.0.001604</td>
+      <th>age-31.5</th>
+      <td>0.000401</td>
     </tr>
     <tr>
       <th rowspan="4" valign="top">child_high_bind</th>
-      <th>HC070021</th>
-      <td>0.0007648</td>
+      <th>age-2.1</th>
+      <td>0.000625</td>
     </tr>
     <tr>
-      <th>HC070041</th>
-      <td>0.003396</td>
+      <th>age-2.2</th>
+      <td>0.000750</td>
     </tr>
     <tr>
-      <th>HC150036</th>
-      <td>0.0024</td>
+      <th>age-2.4</th>
+      <td>0.000400</td>
     </tr>
     <tr>
-      <th>HC150044</th>
-      <td>0.00242</td>
-    </tr>
-    <tr>
-      <th>human</th>
-      <th>VIDD pool</th>
-      <td>nan</td>
+      <th>age-3.4</th>
+      <td>0.000750</td>
     </tr>
   </tbody>
 </table>
@@ -1705,8 +1781,8 @@ Because the pre-vaccination and pre-infection serum generally have weak signal a
 
 The cell below also saves plots showing the fit gamma distribution (you can inspect these separately if you want to look in more detail):
 
+**Right now this significant site selection is NOT run because we only have one replicate and so the data are too noisy. This is why the cell is commented out.**
 
-```python
 os.makedirs(config['avgdiffsel_sigsites_dir'], exist_ok=True)
 
 plotfile_template = os.path.join(config['avgdiffsel_sigsites_dir'],
@@ -1749,17 +1825,61 @@ sigsites_df = (pd.concat(sigsites_df, ignore_index=True)
 
 print('Here are the first few rows of sigsites_df:')
 display(HTML(sigsites_df.head(n=4).to_html(index=False)))
+
+**Heuristically call the "significant sites" to be the top five in each sample.**
+
+
+```python
+sigsites_df = (
+    avg_sel_df
+    [['serum_group', 'serum_name_formatted', 'isite', 'site', 'positive_diffsel']]
+    .assign(positive_diffsel=lambda x: x['positive_diffsel'].apply(lambda y: round(y, 3)))
+    .drop_duplicates()
+    )
+
+fifth_largest = (
+    sigsites_df
+    .groupby('serum_name_formatted')
+    .aggregate({'positive_diffsel': 'nlargest'})
+    .reset_index()
+    .groupby('serum_name_formatted')
+    .aggregate({'positive_diffsel': 'min'})
+    .reset_index()
+    .rename(columns={'positive_diffsel': 'fifth_largest'})
+    )
+
+sigsites_df = (
+    sigsites_df
+    .merge(fifth_largest)
+    .assign(sig=lambda x: x['positive_diffsel'] >= x['fifth_largest'])
+    .drop(columns='fifth_largest')
+    .query('sig')
+    )
+
+sigsites_df
 ```
 
-    Identifying sites of significant selection at a FDR of 0.05.
-    Plots of distribution fitting saved as results/avgdiffsel/sigsites/sigsites_{serum}_{method}.pdf
-    Here are the first few rows of sigsites_df:
 
 
 
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
+      <th></th>
       <th>serum_group</th>
       <th>serum_name_formatted</th>
       <th>isite</th>
@@ -1770,15 +1890,324 @@ display(HTML(sigsites_df.head(n=4).to_html(index=False)))
   </thead>
   <tbody>
     <tr>
+      <th>1</th>
+      <td>adult_high_bind</td>
+      <td>age-31.5</td>
+      <td>207</td>
+      <td>192</td>
+      <td>28.712</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>adult_high_bind</td>
+      <td>age-31.5</td>
+      <td>174</td>
+      <td>159</td>
+      <td>15.296</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>adult_high_bind</td>
+      <td>age-31.5</td>
+      <td>175</td>
+      <td>160</td>
+      <td>23.851</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>adult_high_bind</td>
+      <td>age-31.5</td>
+      <td>216</td>
+      <td>201</td>
+      <td>13.469</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>adult_high_bind</td>
+      <td>age-31.5</td>
+      <td>237</td>
+      <td>222</td>
+      <td>13.836</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>567</th>
       <td>child_high_bind</td>
-      <td>HC070021</td>
-      <td>360</td>
-      <td>(HA2)16</td>
-      <td>24.936383</td>
+      <td>age-2.4</td>
+      <td>290</td>
+      <td>275</td>
+      <td>10.167</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>568</th>
+      <td>child_high_bind</td>
+      <td>age-2.4</td>
+      <td>174</td>
+      <td>159</td>
+      <td>18.619</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>570</th>
+      <td>child_high_bind</td>
+      <td>age-2.4</td>
+      <td>208</td>
+      <td>193</td>
+      <td>18.312</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>572</th>
+      <td>child_high_bind</td>
+      <td>age-2.4</td>
+      <td>237</td>
+      <td>222</td>
+      <td>10.517</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>595</th>
+      <td>child_high_bind</td>
+      <td>age-2.4</td>
+      <td>175</td>
+      <td>160</td>
+      <td>11.417</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>1139</th>
+      <td>child_high_bind</td>
+      <td>age-2.1</td>
+      <td>204</td>
+      <td>189</td>
+      <td>29.385</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>1145</th>
+      <td>child_high_bind</td>
+      <td>age-2.1</td>
+      <td>10</td>
+      <td>-6</td>
+      <td>8.660</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>1146</th>
+      <td>child_high_bind</td>
+      <td>age-2.1</td>
+      <td>290</td>
+      <td>275</td>
+      <td>8.954</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>1179</th>
+      <td>child_high_bind</td>
+      <td>age-2.1</td>
+      <td>458</td>
+      <td>(HA2)114</td>
+      <td>8.564</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>1195</th>
+      <td>child_high_bind</td>
+      <td>age-2.1</td>
+      <td>174</td>
+      <td>159</td>
+      <td>8.720</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>1698</th>
+      <td>child_high_bind</td>
+      <td>age-2.2</td>
+      <td>204</td>
+      <td>189</td>
+      <td>29.898</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>1709</th>
+      <td>child_high_bind</td>
+      <td>age-2.2</td>
+      <td>208</td>
+      <td>193</td>
+      <td>9.976</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>1714</th>
+      <td>child_high_bind</td>
+      <td>age-2.2</td>
+      <td>175</td>
+      <td>160</td>
+      <td>9.384</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>1717</th>
+      <td>child_high_bind</td>
+      <td>age-2.2</td>
+      <td>172</td>
+      <td>157</td>
+      <td>9.735</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>1718</th>
+      <td>child_high_bind</td>
+      <td>age-2.2</td>
+      <td>174</td>
+      <td>159</td>
+      <td>10.950</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>2265</th>
+      <td>child_high_bind</td>
+      <td>age-3.4</td>
+      <td>208</td>
+      <td>193</td>
+      <td>11.594</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>2266</th>
+      <td>child_high_bind</td>
+      <td>age-3.4</td>
+      <td>174</td>
+      <td>159</td>
+      <td>12.447</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>2270</th>
+      <td>child_high_bind</td>
+      <td>age-3.4</td>
+      <td>259</td>
+      <td>244</td>
+      <td>8.945</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>2292</th>
+      <td>child_high_bind</td>
+      <td>age-3.4</td>
+      <td>237</td>
+      <td>222</td>
+      <td>11.169</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>2301</th>
+      <td>child_high_bind</td>
+      <td>age-3.4</td>
+      <td>457</td>
+      <td>(HA2)113</td>
+      <td>8.519</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>2836</th>
+      <td>VIDD_sera</td>
+      <td>2009-age-64-Hutch</td>
+      <td>157</td>
+      <td>142</td>
+      <td>6.906</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>2837</th>
+      <td>VIDD_sera</td>
+      <td>2009-age-64-Hutch</td>
+      <td>259</td>
+      <td>244</td>
+      <td>6.858</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>2855</th>
+      <td>VIDD_sera</td>
+      <td>2009-age-64-Hutch</td>
+      <td>237</td>
+      <td>222</td>
+      <td>12.596</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>2874</th>
+      <td>VIDD_sera</td>
+      <td>2009-age-64-Hutch</td>
+      <td>174</td>
+      <td>159</td>
+      <td>6.907</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>2914</th>
+      <td>VIDD_sera</td>
+      <td>2009-age-64-Hutch</td>
+      <td>21</td>
+      <td>6</td>
+      <td>7.371</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>3398</th>
+      <td>human</td>
+      <td>VIDD pool</td>
+      <td>233</td>
+      <td>218</td>
+      <td>11.202</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>3399</th>
+      <td>human</td>
+      <td>VIDD pool</td>
+      <td>157</td>
+      <td>142</td>
+      <td>11.582</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>3400</th>
+      <td>human</td>
+      <td>VIDD pool</td>
+      <td>174</td>
+      <td>159</td>
+      <td>17.078</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>3401</th>
+      <td>human</td>
+      <td>VIDD pool</td>
+      <td>237</td>
+      <td>222</td>
+      <td>22.278</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>3436</th>
+      <td>human</td>
+      <td>VIDD pool</td>
+      <td>259</td>
+      <td>244</td>
+      <td>12.427</td>
       <td>True</td>
     </tr>
   </tbody>
 </table>
+</div>
+
 
 
 #### List significant sites for each serum
@@ -1814,34 +2243,39 @@ display(HTML(sigsites_df
   </thead>
   <tbody>
     <tr>
-      <th>HC070097</th>
-      <td></td>
-      <td>0</td>
+      <th>age-31.5</th>
+      <td>159, 160, 192, 201, 222</td>
+      <td>5</td>
     </tr>
     <tr>
-      <th>HC070021</th>
-      <td>(HA2)16</td>
-      <td>1</td>
+      <th>age-2.4</th>
+      <td>159, 160, 193, 222, 275</td>
+      <td>5</td>
     </tr>
     <tr>
-      <th>HC070041</th>
-      <td></td>
-      <td>0</td>
+      <th>age-2.1</th>
+      <td>-6, 159, 189, 275, (HA2)114</td>
+      <td>5</td>
     </tr>
     <tr>
-      <th>HC150036</th>
-      <td></td>
-      <td>0</td>
+      <th>age-2.2</th>
+      <td>157, 159, 160, 189, 193</td>
+      <td>5</td>
     </tr>
     <tr>
-      <th>HC150044</th>
-      <td></td>
-      <td>0</td>
+      <th>age-3.4</th>
+      <td>159, 193, 222, 244, (HA2)113</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>2009-age-64-Hutch</th>
+      <td>6, 142, 159, 222, 244</td>
+      <td>5</td>
     </tr>
     <tr>
       <th>VIDD pool</th>
-      <td></td>
-      <td>0</td>
+      <td>142, 159, 218, 222, 244</td>
+      <td>5</td>
     </tr>
   </tbody>
 </table>
@@ -1885,10 +2319,28 @@ display(HTML(sigsites_by_serumgroup.to_html()))
   </thead>
   <tbody>
     <tr>
+      <th>VIDD_sera</th>
+      <td>[21, 157, 174, 237, 259]</td>
+      <td>[6, 142, 159, 222, 244]</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>adult_high_bind</th>
+      <td>[174, 175, 207, 216, 237]</td>
+      <td>[159, 160, 192, 201, 222]</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>human</th>
+      <td>[157, 174, 233, 237, 259]</td>
+      <td>[142, 159, 218, 222, 244]</td>
+      <td>5</td>
+    </tr>
+    <tr>
       <th>child_high_bind</th>
-      <td>[360]</td>
-      <td>[(HA2)16]</td>
-      <td>1</td>
+      <td>[10, 172, 174, 175, 204, 208, 237, 259, 290, 457, 458]</td>
+      <td>[-6, 157, 159, 160, 189, 193, 222, 244, 275, (HA2)113, (HA2)114]</td>
+      <td>11</td>
     </tr>
   </tbody>
 </table>
@@ -1958,10 +2410,28 @@ display(HTML(pd.DataFrame.from_dict(zoom_sites, orient='index').to_html()))
   </thead>
   <tbody>
     <tr>
+      <th>VIDD_sera</th>
+      <td>[21, 157, 174, 237, 259]</td>
+      <td>[6, 142, 159, 222, 244]</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>adult_high_bind</th>
+      <td>[174, 175, 207, 216, 237]</td>
+      <td>[159, 160, 192, 201, 222]</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>human</th>
+      <td>[157, 174, 233, 237, 259]</td>
+      <td>[142, 159, 218, 222, 244]</td>
+      <td>5</td>
+    </tr>
+    <tr>
       <th>child_high_bind</th>
-      <td>[360]</td>
-      <td>[(HA2)16]</td>
-      <td>1</td>
+      <td>[10, 172, 174, 175, 204, 208, 237, 259, 290, 457, 458]</td>
+      <td>[-6, 157, 159, 160, 189, 193, 222, 244, 275, (HA2)113, (HA2)114]</td>
+      <td>11</td>
     </tr>
   </tbody>
 </table>
@@ -1979,54 +2449,6 @@ avg_sel_df = pd.concat(
         )
 ```
 
-
-    ---------------------------------------------------------------------------
-
-    KeyError                                  Traceback (most recent call last)
-
-    <ipython-input-57-d69d74e2065d> in <module>
-          2         [df.assign(zoom_site=lambda x: x['isite'].isin(
-          3                             zoom_sites[serum_group]['isite']))
-    ----> 4          for serum_group, df in avg_sel_df.groupby('serum_group')],
-          5         ignore_index=True
-          6         )
-
-
-    <ipython-input-57-d69d74e2065d> in <listcomp>(.0)
-          2         [df.assign(zoom_site=lambda x: x['isite'].isin(
-          3                             zoom_sites[serum_group]['isite']))
-    ----> 4          for serum_group, df in avg_sel_df.groupby('serum_group')],
-          5         ignore_index=True
-          6         )
-
-
-    /fh/fast/bloom_j/software/conda/envs/BloomLab_v2/lib/python3.6/site-packages/pandas/core/frame.py in assign(self, **kwargs)
-       3549         if PY36:
-       3550             for k, v in kwargs.items():
-    -> 3551                 data[k] = com.apply_if_callable(v, data)
-       3552         else:
-       3553             # <= 3.5: do all calculations first...
-
-
-    /fh/fast/bloom_j/software/conda/envs/BloomLab_v2/lib/python3.6/site-packages/pandas/core/common.py in apply_if_callable(maybe_callable, obj, **kwargs)
-        327 
-        328     if callable(maybe_callable):
-    --> 329         return maybe_callable(obj, **kwargs)
-        330 
-        331     return maybe_callable
-
-
-    <ipython-input-57-d69d74e2065d> in <lambda>(x)
-          1 avg_sel_df = pd.concat(
-          2         [df.assign(zoom_site=lambda x: x['isite'].isin(
-    ----> 3                             zoom_sites[serum_group]['isite']))
-          4          for serum_group, df in avg_sel_df.groupby('serum_group')],
-          5         ignore_index=True
-
-
-    KeyError: 'isite'
-
-
 #### Write tidy data frame with selection data
 We now have all the information used to display the data in the tidy data frame `avg_sel_df`, which has the selection for every mutation for each antibody averaged across this replicates.
 We write this data frame to a CSV file, getting rid of some unneeded columns:
@@ -2040,10 +2462,13 @@ print(f"Writing average selection information to {avg_sel_df_file}")
 (avg_sel_df
  .query('library == @avg_type')
  .drop(columns=['library', 'name_formatted', 'serum_description',
-                'serum_name', 'serum_species'])
+                'serum_name'])
  .to_csv(avg_sel_df_file, index=False, float_format='%.5g')
  )
 ```
+
+    Writing average selection information to results/avgdiffsel/avg_sel_tidy.csv
+
 
 #### Compact "zoom" plots
 For each group of sera we make line plots that show the site-level selection and logo plots that zoom in on mutations at the sites of significant selection.
@@ -2106,6 +2531,50 @@ for serum_group, df in avg_sel_df.groupby('serum_group'):
     plt.close(fig)
 ```
 
+    
+    
+    ************************************************************************
+    Serum group VIDD_sera, saving to results/avgdiffsel/zoomed_plots/VIDD_sera_avg.pdf
+    
+
+
+
+![png](analyze_map_files/analyze_map_112_1.png)
+
+
+    
+    
+    ************************************************************************
+    Serum group adult_high_bind, saving to results/avgdiffsel/zoomed_plots/adult_high_bind_avg.pdf
+    
+
+
+
+![png](analyze_map_files/analyze_map_112_3.png)
+
+
+    
+    
+    ************************************************************************
+    Serum group child_high_bind, saving to results/avgdiffsel/zoomed_plots/child_high_bind_avg.pdf
+    
+
+
+
+![png](analyze_map_files/analyze_map_112_5.png)
+
+
+    
+    
+    ************************************************************************
+    Serum group human, saving to results/avgdiffsel/zoomed_plots/human_avg.pdf
+    
+
+
+
+![png](analyze_map_files/analyze_map_112_7.png)
+
+
 #### Whole-gene logo plots
 Finally, we make whole-gene logo plots for each serum that shows the replicate-average selection for **all** sites.
 We make these whole-gene plots using [dms2_logoplot](https://jbloomlab.github.io/dms_tools2/dms2_logoplot.html).
@@ -2147,6 +2616,15 @@ for tup in (avg_selections
     subprocess.check_output(cmds)
     assert os.path.isfile(plotfile)
 ```
+
+    results/avgdiffsel/full_logo_plots/age-31.5_diffsel.pdf already exists.
+    results/avgdiffsel/full_logo_plots/age-2.4_diffsel.pdf already exists.
+    results/avgdiffsel/full_logo_plots/age-2.1_diffsel.pdf already exists.
+    results/avgdiffsel/full_logo_plots/age-2.2_diffsel.pdf already exists.
+    results/avgdiffsel/full_logo_plots/age-3.4_diffsel.pdf already exists.
+    results/avgdiffsel/full_logo_plots/2009-age-64-Hutch_diffsel.pdf already exists.
+    results/avgdiffsel/full_logo_plots/VIDD pool_diffsel.pdf already exists.
+
 
 ### Plots of each replicate in averages
 In the above section, we plotted the average for each serum.
@@ -2196,6 +2674,50 @@ for serum_group, df in avg_sel_df.groupby('serum_group'):
     plt.close(fig)
 ```
 
+    
+    
+    ************************************************************************
+    VIDD_sera, saving to results/avgdiffsel/replicates/VIDD_sera_reps.pdf and results/avgdiffsel/replicates/VIDD_sera_reps.svg
+    
+
+
+
+![png](analyze_map_files/analyze_map_117_1.png)
+
+
+    
+    
+    ************************************************************************
+    adult_high_bind, saving to results/avgdiffsel/replicates/adult_high_bind_reps.pdf and results/avgdiffsel/replicates/adult_high_bind_reps.svg
+    
+
+
+
+![png](analyze_map_files/analyze_map_117_3.png)
+
+
+    
+    
+    ************************************************************************
+    child_high_bind, saving to results/avgdiffsel/replicates/child_high_bind_reps.pdf and results/avgdiffsel/replicates/child_high_bind_reps.svg
+    
+
+
+
+![png](analyze_map_files/analyze_map_117_5.png)
+
+
+    
+    
+    ************************************************************************
+    human, saving to results/avgdiffsel/replicates/human_reps.pdf and results/avgdiffsel/replicates/human_reps.svg
+    
+
+
+
+![png](analyze_map_files/analyze_map_117_7.png)
+
+
 #### Plot replicate-replicate correlations
 Now we plot the correlation among the replicates that we retained for each serum.
 First, we make a tidy data frame with the correlations between all pairs of replicates for the same serum:
@@ -2243,6 +2765,60 @@ print('Here are the first few lines of the tidy correlation data frame:')
 display(HTML(corr_df.head().to_html(index=False)))
 ```
 
+    Here are the first few lines of the tidy correlation data frame:
+
+
+
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>lib_A</th>
+      <th>lib_B</th>
+      <th>correlation</th>
+      <th>serum_name</th>
+      <th>corr_str</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>lib2</td>
+      <td>lib2</td>
+      <td>1.0</td>
+      <td>age-31.5</td>
+      <td>1.00</td>
+    </tr>
+    <tr>
+      <td>lib2</td>
+      <td>lib2</td>
+      <td>1.0</td>
+      <td>age-2.4</td>
+      <td>1.00</td>
+    </tr>
+    <tr>
+      <td>lib2</td>
+      <td>lib2</td>
+      <td>1.0</td>
+      <td>age-2.1</td>
+      <td>1.00</td>
+    </tr>
+    <tr>
+      <td>lib2</td>
+      <td>lib2</td>
+      <td>1.0</td>
+      <td>age-2.2</td>
+      <td>1.00</td>
+    </tr>
+    <tr>
+      <td>lib2</td>
+      <td>lib2</td>
+      <td>1.0</td>
+      <td>age-3.4</td>
+      <td>1.00</td>
+    </tr>
+  </tbody>
+</table>
+
+
 Now we use [plotnine](https://plotnine.readthedocs.io) to plot a correlation matrix for each serum, and then save to a file as well as showing it:
 
 
@@ -2271,238 +2847,12 @@ print(f"Saving plot to {rep_corr_plot}")
 corr_plot.save(rep_corr_plot)
 ```
 
-## Customized figures for paper
-
-In the following section, we will generate additional customized paper figures not created above.
-
-These go in the following directory:
+    Saving plot to results/avgdiffsel/replicates/rep_corr_matrix.pdf
 
 
-```python
-print(f"Putting additional figures in {config['figsdir']}")
-os.makedirs(config['figsdir'], exist_ok=True)
-```
 
-We will save each of these figures with the following extensions:
+![png](analyze_map_files/analyze_map_121_1.png)
 
-
-```python
-fig_extensions = ['.pdf', '.svg']
-```
-
-### Logo and line plot figures
-Now we are going to make versions of the zoomed logo plots that are slightly different than the ones above.
-We read in colors for specific mutations from a YAML file; these colors match those used to plot the neutralization curves.
-We also plot a slightly different set of sites: not just the "significant" ones, but also others of interest (these are sites of strong selection in ferrets).
-
-First, get data frames with sites to zoom on and how to color them, and how to color specific mutations:
-
-
-```python
-with open(config['figure_config']) as f:
-    fig_config = yaml.safe_load(f)
-
-zoom_sites = []
-mutation_colors = []
-for figure, fig_d in fig_config['figures'].items():
-    # process zoom sites
-    site_color_map = collections.defaultdict(lambda: fig_config['default_logo_color'])
-    if 'site_colors' in fig_d:
-        for r, c in fig_d['site_colors'].items():
-            site_color_map[str(r)] = c
-    zoom_sites.append(
-        pd.DataFrame({'figure': figure,
-                      'sera': fig_d['sera'],
-                      'dummy': 0})
-        .merge(pd.DataFrame({'site': avg_sel_df['site'].unique(),
-                             'dummy': 0}))
-        .drop(columns='dummy')
-        .assign(zoom=lambda x: x['site'].isin([str(r) for r in fig_d['sites']]),
-                color=lambda x: x['site'].map(site_color_map)
-                )
-        )
-    # process colors
-    muts = [mut for mut in fig_d['colors'] if mut not in {'wt', 'syn'}]
-    mutation_colors.append(
-        pd.DataFrame({'figure': figure,
-                      'sera': fig_d['sera'],
-                      'dummy': 0})
-        .merge(pd.DataFrame({'site': [mut[1 : -1] for mut in muts],
-                             'mutation': [mut[-1] for mut in muts],
-                             'color': [fig_d['colors'][mut][0] for mut in muts],
-                             'dummy': 0}))
-        .drop(columns='dummy')
-        )
-
-zoom_sites = pd.concat(zoom_sites)
-mutation_colors = pd.concat(mutation_colors)
-```
-
-Merge the zoom and mutation-color data frames with the data on all of the immune selection values:
-
-
-```python
-colored_zoom_df = (
-    avg_sel_df
-    .query('library == @avg_type')
-    [['serum_name_formatted', 'isite', 'site', 'mutation',
-      'positive_diffsel', 'mutdiffsel', 'site_label']]
-    .rename(columns={'serum_name_formatted': 'sera'})
-    .merge(zoom_sites,
-           on=['sera', 'site'],
-           how='left')
-    .assign(zoom=lambda x: x['zoom'].fillna(False))
-    .merge(mutation_colors,
-           on=['figure', 'sera', 'site', 'mutation'],
-           how='left')
-    .assign(color=lambda x: x['color_x'].where(x['color_y'].isna(), x['color_y']))
-    .drop(columns=['color_x', 'color_y'])
-    )
-```
-
-Make the zoomed logo plots:
-
-
-```python
-for figure, df in colored_zoom_df.groupby('figure'):
-        
-    if 'sera_names' in fig_config['figures'][figure]:
-        name_map = fig_config['figures'][figure]['sera_names']
-    else:
-        name_map = {s: s.replace('-', ' ') for s in df.sera.unique()}
-    df = df.assign(sera_names=lambda x: pd.Categorical(x.sera.map(name_map),
-                                                       x.sera.map(name_map).unique(),
-                                                       ordered=True))
-        
-    fig, axes = dmslogo.facet_plot(
-            data=df,
-            x_col='isite',
-            show_col='zoom',
-            gridrow_col='sera_names',
-            share_xlabel=True,
-            share_ylabel=True,
-            share_ylim_across_rows=share_ylim_across_rows[serum_group],
-            wspace=0.6,
-            rmargin=0.7,
-            draw_line_kwargs=dict(
-                    height_col='positive_diffsel',
-                    xtick_col='site',
-                    ylabel='immune selection',
-                    show_color=PALETTE[-2],
-                    ),
-            draw_logo_kwargs=dict(
-                    letter_col='mutation',
-                    letter_height_col='mutdiffsel',
-                    color_col='color',
-                    xtick_col='site_label',
-                    xlabel='site',
-                    ylabel='immune selection',
-                    clip_negative_heights=True,
-                    ),
-            )
-    display(fig)
-    for ext in fig_extensions:
-        plotfile = os.path.join(config['figsdir'], f"{figure}_logo{ext}")
-        print(f"Saving figure to {plotfile}")
-        fig.savefig(plotfile)
-    plt.close(fig)
-```
-
-### Replicate-to-replicate correlations
-Plot replicate-replicate correlations for the sera in each figure:
-
-
-```python
-for figure, fig_d in fig_config['figures'].items():
-
-    sera = fig_d['sera']
-    
-    if len(sera) == 5:
-        ncol = 5
-    else:
-        ncol = 4
-
-    fig_corr_df = (corr_df
-                   .query('serum_name in @sera')
-                   .assign(serum_name=lambda x: x['serum_name'].str.replace('-', ' '))
-                   )
-    fig_corr_plot = (
-        ggplot(fig_corr_df, aes('lib_A', 'lib_B',
-                            fill='correlation', label='corr_str')) +
-        geom_tile(color='white', size=0.5) +
-        geom_text() +
-        facet_wrap('~ serum_name', ncol=ncol) +
-        theme(figure_size=(2.55 * min(len(sera), ncol), 2.55 * math.ceil(len(sera) / ncol)),
-              panel_grid_major=element_blank()
-              ) +
-        scale_fill_continuous(limits=(0, 1)) +
-        xlab('') +
-        ylab('')
-        )
-
-    print(fig_corr_plot)
-    
-    for ext in fig_extensions:
-        plotfile = os.path.join(config['figsdir'], f"{figure}_rep_corr{ext}")
-        print(f"Saving figure to {plotfile}")
-        fig_corr_plot.save(plotfile)
-```
-
-### Percent infectivity for each replicate
-Plot the percent infectivity remaining for the library for each selection.
-
-
-```python
-def format_label(x):
-    if x == 100:
-        lab = '100'
-    else:
-        lab = '{0:#.2g}'.format(x)
-    if lab[-1] == '.':
-        lab = lab[: -1]
-    return lab + '%'
-        
-
-for figure, fig_d in fig_config['figures'].items():
-
-    sera = fig_d['sera']
-
-    df = (selections
-          .query('retained')
-          .query('serum_name_formatted in @sera')
-          [['serum_name_formatted', 'library', 'percent_infectivity']]
-          .assign(serum=lambda x: x['serum_name_formatted'].str.replace('-', ' '),
-                  label=lambda x: x['percent_infectivity'].apply(format_label)
-                  )
-          )
-    ymax = max(100, 10**math.ceil(math.log10(df['percent_infectivity'].max())))
-    ymin = min(0.1, 10**math.floor(math.log10(df['percent_infectivity'].min())))
-    yextent = math.log10(ymax / ymin)
-    if df['percent_infectivity'].max() > 50:
-        nudge_y = -0.1 * yextent
-    else:
-        nudge_y = 0.1 * yextent
-    if len(sera) == 5:
-        ncol = 5
-    else:
-        ncol = 4
-        
-    plot_percent_infectivity = (
-        ggplot(df, aes('library', 'percent_infectivity', label='label', color='library')) +
-        geom_point(size=3) +
-        geom_text(size=10, nudge_y=nudge_y) +
-        facet_wrap('~ serum', ncol=ncol) +
-        scale_y_log10(limits=(ymin, ymax), name='percent infectivity') +
-        theme(figure_size=(2.55 * min(ncol, len(sera)), 2.55 * math.ceil(len(sera) / ncol))) +
-        scale_color_manual(values=PALETTE[1: ], guide=False)
-        )
-    print(plot_percent_infectivity)
-    
-    for ext in fig_extensions:
-        plotfile = os.path.join(config['figsdir'], f"{figure}_percent_infectivity{ext}")
-        print(f"Saving figure to {plotfile}")
-        plot_percent_infectivity.save(plotfile)
-```
 
 
 ```python

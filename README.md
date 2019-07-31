@@ -13,6 +13,8 @@ The mutational antigenic profiling and analysis was done by Rachel Eguia, Juhye 
 Look at the Markdown output of the Jupyter notebooks for a quick overview of the results:
 
   - [results/notebooks/wt_neut_and_bind.md](results/notebooks/wt_neut_and_bind.md) has neutralization assays of the sera versus the wildtype Perth/2009 HA, and comparison to the binding titers.
+  
+  - [results/notebooks/analyze_map.md](results/notebooks/analyze_map.md) has the results of the mutational antigenic profiling.
 
 ## Configuring and running the analysis
 The configuration for the analysis is in [config.yaml](config.yaml), which in turns points to various other lists of samples and input data.
@@ -21,6 +23,8 @@ This configuration file is self-explanatory.
 The analysis is performed by a series of Jupyter notebooks:
 
   - [wt_neut_and_bind.ipynb](wt_neut_and_bind.ipynb)
+
+  - [analyze_map.ipynb](analyze_map.ipynb)
 
 To execute these notebooks and generate the Markdown output referred to in the subsection above, runs the script [run_nb.bash](run_nbs.bash) with:
 

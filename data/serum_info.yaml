@@ -18,45 +18,35 @@ plasmid:
 # Serum samples from Oxford University Clinical Research Unit (OUCRU) in Ho Chi Minh City 
 
 HC070097:
-  name: HC070097
+  name: age-31.5
   description: serum from OUCRU in Ho Chi Minh City, Vietnam
   group: adult_high_bind
 
 HC070021:
-  name: HC070021
+  name: age-2.4
   description: serum from OUCRU in Ho Chi Minh City, Vietnam
   group: child_high_bind
 
 HC070041:
-  name: HC070041
+  name: age-2.1
   description: serum from OUCRU in Ho Chi Minh City, Vietnam
   group: child_high_bind
   
 HC150036:
-  name: HC150036
+  name: age-2.2
   description: serum from OUCRU in Ho Chi Minh City, Vietnam
   group: child_high_bind
   
 HC150044:
-  name: HC150044
+  name: age-3.4
   description: serum from OUCRU in Ho Chi Minh City, Vietnam
   group: child_high_bind  
   
 #------------------------------
 # Human sera from Terry Stevens-Ayers in Hutch VIDD Division
 
-VIDD1:
-  name: 2010-age-21
-  description: collected at Hutch in 2/2010 from person born in 1989
-  group: VIDD_sera
-
-VIDD2:
-  name: 2009-age-53
-  description: collected at Hutch in 1/2009 from person born in 1956
-  group: VIDD_sera
-
 VIDD4:
-  name: 2009-age-64
+  name: 2009-age-64-Hutch
   description: collected at Hutch in 11/2008 from person born in 1945
   group: VIDD_sera
 
