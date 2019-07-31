@@ -55,6 +55,11 @@ VIDD2:
   description: collected at Hutch in 1/2009 from person born in 1956
   group: VIDD_sera
 
+VIDD4:
+  name: 2009-age-64
+  description: collected at Hutch in 11/2008 from person born in 1945
+  group: VIDD_sera
+
 #------------------------------
 # VIDD pool
 
