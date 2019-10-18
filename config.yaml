@@ -3,6 +3,7 @@
 # information on sera and samples
 serum_info: data/serum_info.yaml
 sample_list: data/sample_list.csv
+neut_serum_info: data/neut_serum_info.csv
 
 # wildtype sequence, and map of sequential to standard HA numbering
 refseq: data/Perth09_HA_reference.fa
