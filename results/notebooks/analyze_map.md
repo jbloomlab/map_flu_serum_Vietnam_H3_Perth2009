@@ -1,5 +1,5 @@
 <h1>Table of Contents<span class="tocSkip"></span></h1>
-<div class="toc"><ul class="toc-item"><li><span><a href="#Analysis-of-serum-mutational-antigenic-profiling" data-toc-modified-id="Analysis-of-serum-mutational-antigenic-profiling-1">Analysis of serum mutational antigenic profiling</a></span><ul class="toc-item"><li><span><a href="#Configure-analysis" data-toc-modified-id="Configure-analysis-1.1">Configure analysis</a></span><ul class="toc-item"><li><span><a href="#Import-Python-modules-/-packages" data-toc-modified-id="Import-Python-modules-/-packages-1.1.1">Import Python modules / packages</a></span></li><li><span><a href="#Get-config-variables" data-toc-modified-id="Get-config-variables-1.1.2">Get config variables</a></span></li><li><span><a href="#Get-sera-information" data-toc-modified-id="Get-sera-information-1.1.3">Get sera information</a></span></li><li><span><a href="#Get-list-of-samples" data-toc-modified-id="Get-list-of-samples-1.1.4">Get list of samples</a></span></li><li><span><a href="#Download-deep-sequencing-data-if-needed" data-toc-modified-id="Download-deep-sequencing-data-if-needed-1.1.5">Download deep sequencing data if needed</a></span></li></ul></li><li><span><a href="#Align-sequencing-and-count-mutations" data-toc-modified-id="Align-sequencing-and-count-mutations-1.2">Align sequencing and count mutations</a></span><ul class="toc-item"><li><span><a href="#Run-dms2_batch_bcsubamp" data-toc-modified-id="Run-dms2_batch_bcsubamp-1.2.1">Run <code>dms2_batch_bcsubamp</code></a></span></li><li><span><a href="#Plot-sequencing-and-mutation-counts-summaries" data-toc-modified-id="Plot-sequencing-and-mutation-counts-summaries-1.2.2">Plot sequencing and mutation counts summaries</a></span><ul class="toc-item"><li><span><a href="#Reads-and-barcodes-per-sample" data-toc-modified-id="Reads-and-barcodes-per-sample-1.2.2.1">Reads and barcodes per sample</a></span></li><li><span><a href="#Coverage-across-gene" data-toc-modified-id="Coverage-across-gene-1.2.2.2">Coverage across gene</a></span></li><li><span><a href="#Mutation-frequencies" data-toc-modified-id="Mutation-frequencies-1.2.2.3">Mutation frequencies</a></span></li><li><span><a href="#Check-for-oxidative-damage" data-toc-modified-id="Check-for-oxidative-damage-1.2.2.4">Check for oxidative damage</a></span></li></ul></li><li><span><a href="#Renumber-to-standard-HA-numbering" data-toc-modified-id="Renumber-to-standard-HA-numbering-1.2.3">Renumber to standard HA numbering</a></span></li></ul></li><li><span><a href="#Compute-immune-selection-on-mutations" data-toc-modified-id="Compute-immune-selection-on-mutations-1.3">Compute immune selection on mutations</a></span><ul class="toc-item"><li><span><a href="#Samples-to-compare-for-each-selection" data-toc-modified-id="Samples-to-compare-for-each-selection-1.3.1">Samples to compare for each selection</a></span></li><li><span><a href="#Compute-immune-selection" data-toc-modified-id="Compute-immune-selection-1.3.2">Compute immune selection</a></span></li><li><span><a href="#Get-all-selection-information-in-one-data-frame" data-toc-modified-id="Get-all-selection-information-in-one-data-frame-1.3.3">Get all selection information in one data frame</a></span></li></ul></li><li><span><a href="#Analyze-and-plot-immune-selection" data-toc-modified-id="Analyze-and-plot-immune-selection-1.4">Analyze and plot immune selection</a></span><ul class="toc-item"><li><span><a href="#Choose-sample-to-retain-for-each-serum" data-toc-modified-id="Choose-sample-to-retain-for-each-serum-1.4.1">Choose sample to retain for each serum</a></span><ul class="toc-item"><li><span><a href="#Plot-site-level-selection-for-all-samples" data-toc-modified-id="Plot-site-level-selection-for-all-samples-1.4.1.1">Plot site-level selection for all samples</a></span></li><li><span><a href="#Choose-samples-to-retain-based-on-infectivity-remaining" data-toc-modified-id="Choose-samples-to-retain-based-on-infectivity-remaining-1.4.1.2">Choose samples to retain based on infectivity remaining</a></span></li><li><span><a href="#Retained-samples,-percent-infectivity,-and-serum/antibody-concentration" data-toc-modified-id="Retained-samples,-percent-infectivity,-and-serum/antibody-concentration-1.4.1.3">Retained samples, percent infectivity, and serum/antibody concentration</a></span></li></ul></li><li><span><a href="#Compute-serum-average-from-retained-samples" data-toc-modified-id="Compute-serum-average-from-retained-samples-1.4.2">Compute serum average from retained samples</a></span></li><li><span><a href="#Identify-sites-of-&quot;significant&quot;-selection" data-toc-modified-id="Identify-sites-of-&quot;significant&quot;-selection-1.4.3">Identify sites of "significant" selection</a></span><ul class="toc-item"><li><span><a href="#Cutoff-for-significance" data-toc-modified-id="Cutoff-for-significance-1.4.3.1">Cutoff for significance</a></span></li><li><span><a href="#Identify-significant-sites" data-toc-modified-id="Identify-significant-sites-1.4.3.2">Identify significant sites</a></span></li><li><span><a href="#List-significant-sites-for-each-serum" data-toc-modified-id="List-significant-sites-for-each-serum-1.4.3.3">List significant sites for each serum</a></span></li><li><span><a href="#Get-significant-sites-for-each-serum-group" data-toc-modified-id="Get-significant-sites-for-each-serum-group-1.4.3.4">Get significant sites for each serum group</a></span></li></ul></li><li><span><a href="#Line-and-logo-plots-of-average-for-each-serum" data-toc-modified-id="Line-and-logo-plots-of-average-for-each-serum-1.4.4">Line and logo plots of average for each serum</a></span><ul class="toc-item"><li><span><a href="#Choose-sites-to-zoom-in-on" data-toc-modified-id="Choose-sites-to-zoom-in-on-1.4.4.1">Choose sites to zoom-in on</a></span></li><li><span><a href="#Write-tidy-data-frame-with-selection-data" data-toc-modified-id="Write-tidy-data-frame-with-selection-data-1.4.4.2">Write tidy data frame with selection data</a></span></li><li><span><a href="#Compact-&quot;zoom&quot;-plots" data-toc-modified-id="Compact-&quot;zoom&quot;-plots-1.4.4.3">Compact "zoom" plots</a></span></li><li><span><a href="#Whole-gene-logo-plots" data-toc-modified-id="Whole-gene-logo-plots-1.4.4.4">Whole-gene logo plots</a></span></li></ul></li><li><span><a href="#Plots-of-each-replicate-in-averages" data-toc-modified-id="Plots-of-each-replicate-in-averages-1.4.5">Plots of each replicate in averages</a></span><ul class="toc-item"><li><span><a href="#Zoom-plots-showing-each-replicate" data-toc-modified-id="Zoom-plots-showing-each-replicate-1.4.5.1">Zoom plots showing each replicate</a></span></li><li><span><a href="#Plot-replicate-replicate-correlations" data-toc-modified-id="Plot-replicate-replicate-correlations-1.4.5.2">Plot replicate-replicate correlations</a></span></li></ul></li></ul></li><li><span><a href="#Customized-figures-for-paper" data-toc-modified-id="Customized-figures-for-paper-1.5">Customized figures for paper</a></span><ul class="toc-item"><li><span><a href="#Logo-and-line-plot-figures" data-toc-modified-id="Logo-and-line-plot-figures-1.5.1">Logo and line plot figures</a></span></li><li><span><a href="#Replicate-to-replicate-correlations" data-toc-modified-id="Replicate-to-replicate-correlations-1.5.2">Replicate-to-replicate correlations</a></span></li><li><span><a href="#Percent-infectivity-for-each-replicate" data-toc-modified-id="Percent-infectivity-for-each-replicate-1.5.3">Percent infectivity for each replicate</a></span></li></ul></li></ul></li></ul></div>
+<div class="toc"><ul class="toc-item"><li><span><a href="#Analysis-of-serum-mutational-antigenic-profiling" data-toc-modified-id="Analysis-of-serum-mutational-antigenic-profiling-1">Analysis of serum mutational antigenic profiling</a></span><ul class="toc-item"><li><span><a href="#Configure-analysis" data-toc-modified-id="Configure-analysis-1.1">Configure analysis</a></span><ul class="toc-item"><li><span><a href="#Import-Python-modules-/-packages" data-toc-modified-id="Import-Python-modules-/-packages-1.1.1">Import Python modules / packages</a></span></li><li><span><a href="#Get-config-variables" data-toc-modified-id="Get-config-variables-1.1.2">Get config variables</a></span></li><li><span><a href="#Get-sera-information" data-toc-modified-id="Get-sera-information-1.1.3">Get sera information</a></span></li><li><span><a href="#Get-list-of-samples" data-toc-modified-id="Get-list-of-samples-1.1.4">Get list of samples</a></span></li><li><span><a href="#Download-deep-sequencing-data-if-needed" data-toc-modified-id="Download-deep-sequencing-data-if-needed-1.1.5">Download deep sequencing data if needed</a></span></li></ul></li><li><span><a href="#Align-sequencing-and-count-mutations" data-toc-modified-id="Align-sequencing-and-count-mutations-1.2">Align sequencing and count mutations</a></span><ul class="toc-item"><li><span><a href="#Run-dms2_batch_bcsubamp" data-toc-modified-id="Run-dms2_batch_bcsubamp-1.2.1">Run <code>dms2_batch_bcsubamp</code></a></span></li><li><span><a href="#Plot-sequencing-and-mutation-counts-summaries" data-toc-modified-id="Plot-sequencing-and-mutation-counts-summaries-1.2.2">Plot sequencing and mutation counts summaries</a></span><ul class="toc-item"><li><span><a href="#Reads-and-barcodes-per-sample" data-toc-modified-id="Reads-and-barcodes-per-sample-1.2.2.1">Reads and barcodes per sample</a></span></li><li><span><a href="#Coverage-across-gene" data-toc-modified-id="Coverage-across-gene-1.2.2.2">Coverage across gene</a></span></li><li><span><a href="#Mutation-frequencies" data-toc-modified-id="Mutation-frequencies-1.2.2.3">Mutation frequencies</a></span></li><li><span><a href="#Check-for-oxidative-damage" data-toc-modified-id="Check-for-oxidative-damage-1.2.2.4">Check for oxidative damage</a></span></li></ul></li><li><span><a href="#Renumber-to-standard-HA-numbering" data-toc-modified-id="Renumber-to-standard-HA-numbering-1.2.3">Renumber to standard HA numbering</a></span></li></ul></li><li><span><a href="#Compute-immune-selection-on-mutations" data-toc-modified-id="Compute-immune-selection-on-mutations-1.3">Compute immune selection on mutations</a></span><ul class="toc-item"><li><span><a href="#Samples-to-compare-for-each-selection" data-toc-modified-id="Samples-to-compare-for-each-selection-1.3.1">Samples to compare for each selection</a></span></li><li><span><a href="#Compute-immune-selection" data-toc-modified-id="Compute-immune-selection-1.3.2">Compute immune selection</a></span></li><li><span><a href="#Get-all-selection-information-in-one-data-frame" data-toc-modified-id="Get-all-selection-information-in-one-data-frame-1.3.3">Get all selection information in one data frame</a></span></li></ul></li><li><span><a href="#Analyze-and-plot-immune-selection" data-toc-modified-id="Analyze-and-plot-immune-selection-1.4">Analyze and plot immune selection</a></span><ul class="toc-item"><li><span><a href="#Choose-sample-to-retain-for-each-serum" data-toc-modified-id="Choose-sample-to-retain-for-each-serum-1.4.1">Choose sample to retain for each serum</a></span><ul class="toc-item"><li><span><a href="#Plot-site-level-selection-for-all-samples" data-toc-modified-id="Plot-site-level-selection-for-all-samples-1.4.1.1">Plot site-level selection for all samples</a></span></li><li><span><a href="#Choose-samples-to-retain-based-on-infectivity-remaining" data-toc-modified-id="Choose-samples-to-retain-based-on-infectivity-remaining-1.4.1.2">Choose samples to retain based on infectivity remaining</a></span></li><li><span><a href="#Retained-samples,-percent-infectivity,-and-serum/antibody-concentration" data-toc-modified-id="Retained-samples,-percent-infectivity,-and-serum/antibody-concentration-1.4.1.3">Retained samples, percent infectivity, and serum/antibody concentration</a></span></li></ul></li><li><span><a href="#Compute-serum-average-from-retained-samples" data-toc-modified-id="Compute-serum-average-from-retained-samples-1.4.2">Compute serum average from retained samples</a></span></li><li><span><a href="#Identify-sites-of-&quot;significant&quot;-selection" data-toc-modified-id="Identify-sites-of-&quot;significant&quot;-selection-1.4.3">Identify sites of "significant" selection</a></span><ul class="toc-item"><li><span><a href="#Cutoff-for-significance" data-toc-modified-id="Cutoff-for-significance-1.4.3.1">Cutoff for significance</a></span></li><li><span><a href="#Identify-significant-sites" data-toc-modified-id="Identify-significant-sites-1.4.3.2">Identify significant sites</a></span></li><li><span><a href="#List-significant-sites-for-each-serum" data-toc-modified-id="List-significant-sites-for-each-serum-1.4.3.3">List significant sites for each serum</a></span></li><li><span><a href="#Get-significant-sites-for-each-serum-group" data-toc-modified-id="Get-significant-sites-for-each-serum-group-1.4.3.4">Get significant sites for each serum group</a></span></li></ul></li><li><span><a href="#Line-and-logo-plots-of-average-for-each-serum" data-toc-modified-id="Line-and-logo-plots-of-average-for-each-serum-1.4.4">Line and logo plots of average for each serum</a></span><ul class="toc-item"><li><span><a href="#Choose-sites-to-zoom-in-on" data-toc-modified-id="Choose-sites-to-zoom-in-on-1.4.4.1">Choose sites to zoom-in on</a></span></li><li><span><a href="#Write-tidy-data-frame-with-selection-data" data-toc-modified-id="Write-tidy-data-frame-with-selection-data-1.4.4.2">Write tidy data frame with selection data</a></span></li><li><span><a href="#Compact-&quot;zoom&quot;-plots" data-toc-modified-id="Compact-&quot;zoom&quot;-plots-1.4.4.3">Compact "zoom" plots</a></span></li><li><span><a href="#Whole-gene-logo-plots" data-toc-modified-id="Whole-gene-logo-plots-1.4.4.4">Whole-gene logo plots</a></span></li></ul></li><li><span><a href="#Plots-of-each-replicate-in-averages" data-toc-modified-id="Plots-of-each-replicate-in-averages-1.4.5">Plots of each replicate in averages</a></span><ul class="toc-item"><li><span><a href="#Zoom-plots-showing-each-replicate" data-toc-modified-id="Zoom-plots-showing-each-replicate-1.4.5.1">Zoom plots showing each replicate</a></span></li><li><span><a href="#Plot-replicate-replicate-correlations" data-toc-modified-id="Plot-replicate-replicate-correlations-1.4.5.2">Plot replicate-replicate correlations</a></span></li></ul></li></ul></li></ul></li></ul></div>
 
 # Analysis of serum mutational antigenic profiling
 This Python Jupyter notebook analyzes mutational antigenic profiling of serum against virus carrying the A/Perth/2009 (H3N2) HA.
@@ -110,6 +110,10 @@ display(HTML(pd.Series(config)
     <tr>
       <th>sample_list</th>
       <td>data/sample_list.csv</td>
+    </tr>
+    <tr>
+      <th>neut_serum_info</th>
+      <td>data/neut_serum_info.csv</td>
     </tr>
     <tr>
       <th>refseq</th>
@@ -789,7 +793,7 @@ cmds = ['dms2_batch_bcsubamp',
         '--R2trim', str(config['R2trim']),
         '--outdir', config['countsdir'],
         '--summaryprefix', 'summary',
-        '--ncpus', '2',
+        '--ncpus', str(config['ncpus']),
         '--use_existing', config['use_existing'],
         ]
 
@@ -802,7 +806,7 @@ print('Completed running dms2_batch_bcsubamp.')
 ```
 
     Running dms2_batch_bcsubamp with this command:
-    dms2_batch_bcsubamp --batchfile results/codoncounts/batch.csv --refseq data/Perth09_HA_reference.fa --alignspecs 1,285,38,40 286,567,33,34 568,852,34,30 853,1137,34,31 1138,1422,36,29 1423,1701,39,44 --R1trim 200 --R2trim 165 --outdir results/codoncounts --summaryprefix summary --ncpus 2 --use_existing yes
+    dms2_batch_bcsubamp --batchfile results/codoncounts/batch.csv --refseq data/Perth09_HA_reference.fa --alignspecs 1,285,38,40 286,567,33,34 568,852,34,30 853,1137,34,31 1138,1422,36,29 1423,1701,39,44 --R1trim 200 --R2trim 165 --outdir results/codoncounts --summaryprefix summary --ncpus 16 --use_existing yes
     Completed running dms2_batch_bcsubamp.
 
 
@@ -2385,8 +2389,10 @@ Because the pre-vaccination and pre-infection serum generally have weak signal a
 
 The cell below also saves plots showing the fit gamma distribution (you can inspect these separately if you want to look in more detail):
 
-**Right now this significant site selection is NOT run because we only have one replicate and so the data are too noisy. This is why the cell is commented out.**
 
+
+
+```python
 os.makedirs(config['avgdiffsel_sigsites_dir'], exist_ok=True)
 
 plotfile_template = os.path.join(config['avgdiffsel_sigsites_dir'],
@@ -2418,355 +2424,65 @@ for serum_name_formatted, group in (
                 method=method
                 )
         sigsites_df.append(df)
-
+        
 sigsites_df = (pd.concat(sigsites_df, ignore_index=True)
-               .groupby(sigsites_cols)
-               .aggregate({'sig': 'sum'})
-               .reset_index()
-               .assign(sig=lambda x: x['sig'].astype(bool))
                .query('sig')
+               [sigsites_cols]
+               .drop_duplicates()
+               .reset_index(drop=True)
                )
 
 print('Here are the first few rows of sigsites_df:')
 display(HTML(sigsites_df.head(n=4).to_html(index=False)))
-
-**Heuristically call the "significant sites" to be the top five in each sample.**
-
-
-```python
-sigsites_df = (
-    avg_sel_df
-    [['serum_group', 'serum_name_formatted', 'isite', 'site', 'positive_diffsel']]
-    .assign(positive_diffsel=lambda x: x['positive_diffsel'].apply(lambda y: round(y, 3)))
-    .drop_duplicates()
-    )
-
-fifth_largest = (
-    sigsites_df
-    .groupby('serum_name_formatted')
-    .aggregate({'positive_diffsel': 'nlargest'})
-    .reset_index()
-    .groupby('serum_name_formatted')
-    .aggregate({'positive_diffsel': 'min'})
-    .reset_index()
-    .rename(columns={'positive_diffsel': 'fifth_largest'})
-    )
-
-sigsites_df = (
-    sigsites_df
-    .merge(fifth_largest)
-    .assign(sig=lambda x: x['positive_diffsel'] >= x['fifth_largest'])
-    .drop(columns='fifth_largest')
-    .query('sig')
-    )
-
-sigsites_df
 ```
 
+    Identifying sites of significant selection at a FDR of 0.05.
+    Plots of distribution fitting saved as results/avgdiffsel/sigsites/sigsites_{serum}_{method}.pdf
+    Here are the first few rows of sigsites_df:
 
 
 
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
-      <th></th>
       <th>serum_group</th>
       <th>serum_name_formatted</th>
       <th>isite</th>
       <th>site</th>
       <th>positive_diffsel</th>
-      <th>sig</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>567</td>
       <td>adult_high_bind</td>
       <td>age-31.5</td>
       <td>207</td>
       <td>192</td>
-      <td>28.712</td>
-      <td>True</td>
+      <td>27.930579</td>
     </tr>
     <tr>
-      <td>1132</td>
       <td>adult_high_bind</td>
       <td>age-31.5</td>
       <td>174</td>
       <td>159</td>
-      <td>28.296</td>
-      <td>True</td>
+      <td>13.229375</td>
     </tr>
     <tr>
-      <td>1133</td>
-      <td>adult_high_bind</td>
-      <td>age-31.5</td>
-      <td>207</td>
-      <td>192</td>
-      <td>33.581</td>
-      <td>True</td>
-    </tr>
-    <tr>
-      <td>1135</td>
       <td>adult_high_bind</td>
       <td>age-31.5</td>
       <td>175</td>
       <td>160</td>
-      <td>25.253</td>
-      <td>True</td>
+      <td>19.125205</td>
     </tr>
     <tr>
-      <td>1698</td>
       <td>adult_high_bind</td>
       <td>age-31.5</td>
-      <td>207</td>
-      <td>192</td>
-      <td>27.931</td>
-      <td>True</td>
-    </tr>
-    <tr>
-      <td>2785</td>
-      <td>child_high_bind</td>
-      <td>age-2.4</td>
-      <td>174</td>
-      <td>159</td>
-      <td>18.619</td>
-      <td>True</td>
-    </tr>
-    <tr>
-      <td>3349</td>
-      <td>child_high_bind</td>
-      <td>age-2.4</td>
-      <td>174</td>
-      <td>159</td>
-      <td>45.379</td>
-      <td>True</td>
-    </tr>
-    <tr>
-      <td>3352</td>
-      <td>child_high_bind</td>
-      <td>age-2.4</td>
-      <td>208</td>
-      <td>193</td>
-      <td>26.657</td>
-      <td>True</td>
-    </tr>
-    <tr>
-      <td>3358</td>
-      <td>child_high_bind</td>
-      <td>age-2.4</td>
-      <td>175</td>
-      <td>160</td>
-      <td>18.906</td>
-      <td>True</td>
-    </tr>
-    <tr>
-      <td>3915</td>
-      <td>child_high_bind</td>
-      <td>age-2.4</td>
-      <td>174</td>
-      <td>159</td>
-      <td>18.992</td>
-      <td>True</td>
-    </tr>
-    <tr>
-      <td>4456</td>
-      <td>child_high_bind</td>
-      <td>age-2.1</td>
-      <td>487</td>
-      <td>(HA2)143</td>
-      <td>10.478</td>
-      <td>True</td>
-    </tr>
-    <tr>
-      <td>4472</td>
-      <td>child_high_bind</td>
-      <td>age-2.1</td>
-      <td>107</td>
-      <td>92</td>
-      <td>11.876</td>
-      <td>True</td>
-    </tr>
-    <tr>
-      <td>5028</td>
-      <td>child_high_bind</td>
-      <td>age-2.1</td>
-      <td>204</td>
-      <td>189</td>
-      <td>29.385</td>
-      <td>True</td>
-    </tr>
-    <tr>
-      <td>5585</td>
-      <td>child_high_bind</td>
-      <td>age-2.1</td>
-      <td>204</td>
-      <td>189</td>
-      <td>32.224</td>
-      <td>True</td>
-    </tr>
-    <tr>
-      <td>6151</td>
-      <td>child_high_bind</td>
-      <td>age-2.1</td>
-      <td>204</td>
-      <td>189</td>
-      <td>24.229</td>
-      <td>True</td>
-    </tr>
-    <tr>
-      <td>6672</td>
-      <td>child_high_bind</td>
-      <td>age-2.2</td>
-      <td>204</td>
-      <td>189</td>
-      <td>20.930</td>
-      <td>True</td>
-    </tr>
-    <tr>
-      <td>7231</td>
-      <td>child_high_bind</td>
-      <td>age-2.2</td>
-      <td>204</td>
-      <td>189</td>
-      <td>29.898</td>
-      <td>True</td>
-    </tr>
-    <tr>
-      <td>7797</td>
-      <td>child_high_bind</td>
-      <td>age-2.2</td>
-      <td>204</td>
-      <td>189</td>
-      <td>60.894</td>
-      <td>True</td>
-    </tr>
-    <tr>
-      <td>7798</td>
-      <td>child_high_bind</td>
-      <td>age-2.2</td>
-      <td>174</td>
-      <td>159</td>
-      <td>30.360</td>
-      <td>True</td>
-    </tr>
-    <tr>
-      <td>8360</td>
-      <td>child_high_bind</td>
-      <td>age-2.2</td>
-      <td>204</td>
-      <td>189</td>
-      <td>32.174</td>
-      <td>True</td>
-    </tr>
-    <tr>
-      <td>10008</td>
-      <td>child_high_bind</td>
-      <td>age-3.4</td>
-      <td>174</td>
-      <td>159</td>
-      <td>36.570</td>
-      <td>True</td>
-    </tr>
-    <tr>
-      <td>10010</td>
-      <td>child_high_bind</td>
-      <td>age-3.4</td>
-      <td>175</td>
-      <td>160</td>
-      <td>19.333</td>
-      <td>True</td>
-    </tr>
-    <tr>
-      <td>10012</td>
-      <td>child_high_bind</td>
-      <td>age-3.4</td>
-      <td>208</td>
-      <td>193</td>
-      <td>18.128</td>
-      <td>True</td>
-    </tr>
-    <tr>
-      <td>10574</td>
-      <td>child_high_bind</td>
-      <td>age-3.4</td>
-      <td>208</td>
-      <td>193</td>
-      <td>13.965</td>
-      <td>True</td>
-    </tr>
-    <tr>
-      <td>10575</td>
-      <td>child_high_bind</td>
-      <td>age-3.4</td>
-      <td>174</td>
-      <td>159</td>
-      <td>16.474</td>
-      <td>True</td>
-    </tr>
-    <tr>
-      <td>11124</td>
-      <td>VIDD_sera</td>
-      <td>2009-age-64-Hutch</td>
-      <td>237</td>
-      <td>222</td>
-      <td>12.770</td>
-      <td>True</td>
-    </tr>
-    <tr>
-      <td>12255</td>
-      <td>VIDD_sera</td>
-      <td>2009-age-64-Hutch</td>
-      <td>174</td>
-      <td>159</td>
-      <td>45.335</td>
-      <td>True</td>
-    </tr>
-    <tr>
-      <td>12261</td>
-      <td>VIDD_sera</td>
-      <td>2009-age-64-Hutch</td>
-      <td>259</td>
-      <td>244</td>
-      <td>12.919</td>
-      <td>True</td>
-    </tr>
-    <tr>
-      <td>12262</td>
-      <td>VIDD_sera</td>
-      <td>2009-age-64-Hutch</td>
-      <td>235</td>
-      <td>220</td>
-      <td>15.374</td>
-      <td>True</td>
-    </tr>
-    <tr>
-      <td>12332</td>
-      <td>VIDD_sera</td>
-      <td>2009-age-64-Hutch</td>
-      <td>237</td>
-      <td>222</td>
-      <td>14.808</td>
-      <td>True</td>
+      <td>216</td>
+      <td>201</td>
+      <td>10.582520</td>
     </tr>
   </tbody>
 </table>
-</div>
-
 
 
 #### List significant sites for each serum
@@ -2803,33 +2519,33 @@ display(HTML(sigsites_df
   <tbody>
     <tr>
       <th>age-31.5</th>
-      <td>159, 160, 192, 192, 192</td>
-      <td>5</td>
+      <td>157, 159, 160, 192, 201, 222</td>
+      <td>6</td>
     </tr>
     <tr>
       <th>age-2.4</th>
-      <td>159, 159, 159, 160, 193</td>
-      <td>5</td>
+      <td>159, 160, 193, 222</td>
+      <td>4</td>
     </tr>
     <tr>
       <th>age-2.1</th>
-      <td>92, 189, 189, 189, (HA2)143</td>
-      <td>5</td>
+      <td>189</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>age-2.2</th>
-      <td>159, 189, 189, 189, 189</td>
+      <td>157, 159, 160, 189, 193</td>
       <td>5</td>
     </tr>
     <tr>
       <th>age-3.4</th>
-      <td>159, 159, 160, 193, 193</td>
-      <td>5</td>
+      <td>159, 160, 193, 222</td>
+      <td>4</td>
     </tr>
     <tr>
       <th>2009-age-64-Hutch</th>
-      <td>159, 220, 222, 222, 244</td>
-      <td>5</td>
+      <td>159, 222</td>
+      <td>2</td>
     </tr>
   </tbody>
 </table>
@@ -2873,21 +2589,21 @@ display(HTML(sigsites_by_serumgroup.to_html()))
   </thead>
   <tbody>
     <tr>
-      <th>adult_high_bind</th>
-      <td>[174, 175, 207]</td>
-      <td>[159, 160, 192]</td>
-      <td>3</td>
+      <th>VIDD_sera</th>
+      <td>[174, 237]</td>
+      <td>[159, 222]</td>
+      <td>2</td>
     </tr>
     <tr>
-      <th>VIDD_sera</th>
-      <td>[174, 235, 237, 259]</td>
-      <td>[159, 220, 222, 244]</td>
-      <td>4</td>
+      <th>adult_high_bind</th>
+      <td>[172, 174, 175, 207, 216, 237]</td>
+      <td>[157, 159, 160, 192, 201, 222]</td>
+      <td>6</td>
     </tr>
     <tr>
       <th>child_high_bind</th>
-      <td>[107, 174, 175, 204, 208, 487]</td>
-      <td>[92, 159, 160, 189, 193, (HA2)143]</td>
+      <td>[172, 174, 175, 204, 208, 237]</td>
+      <td>[157, 159, 160, 189, 193, 222]</td>
       <td>6</td>
     </tr>
   </tbody>
@@ -2958,21 +2674,21 @@ display(HTML(pd.DataFrame.from_dict(zoom_sites, orient='index').to_html()))
   </thead>
   <tbody>
     <tr>
-      <th>adult_high_bind</th>
-      <td>[174, 175, 207]</td>
-      <td>[159, 160, 192]</td>
-      <td>3</td>
+      <th>VIDD_sera</th>
+      <td>[174, 237]</td>
+      <td>[159, 222]</td>
+      <td>2</td>
     </tr>
     <tr>
-      <th>VIDD_sera</th>
-      <td>[174, 235, 237, 259]</td>
-      <td>[159, 220, 222, 244]</td>
-      <td>4</td>
+      <th>adult_high_bind</th>
+      <td>[172, 174, 175, 207, 216, 237]</td>
+      <td>[157, 159, 160, 192, 201, 222]</td>
+      <td>6</td>
     </tr>
     <tr>
       <th>child_high_bind</th>
-      <td>[107, 174, 175, 204, 208, 487]</td>
-      <td>[92, 159, 160, 189, 193, (HA2)143]</td>
+      <td>[172, 174, 175, 204, 208, 237]</td>
+      <td>[157, 159, 160, 189, 193, 222]</td>
       <td>6</td>
     </tr>
   </tbody>
@@ -3081,7 +2797,7 @@ for serum_group, df in avg_sel_df.groupby('serum_group'):
 
 
 
-![png](analyze_map_files/analyze_map_112_1.png)
+![png](analyze_map_files/analyze_map_110_1.png)
 
 
     
@@ -3092,7 +2808,7 @@ for serum_group, df in avg_sel_df.groupby('serum_group'):
 
 
 
-![png](analyze_map_files/analyze_map_112_3.png)
+![png](analyze_map_files/analyze_map_110_3.png)
 
 
     
@@ -3103,7 +2819,7 @@ for serum_group, df in avg_sel_df.groupby('serum_group'):
 
 
 
-![png](analyze_map_files/analyze_map_112_5.png)
+![png](analyze_map_files/analyze_map_110_5.png)
 
 
 #### Whole-gene logo plots
@@ -3148,12 +2864,12 @@ for tup in (avg_selections
     assert os.path.isfile(plotfile)
 ```
 
-    Plotting age-31.5 to results/avgdiffsel/full_logo_plots/age-31.5_diffsel.pdf
-    Plotting age-2.4 to results/avgdiffsel/full_logo_plots/age-2.4_diffsel.pdf
-    Plotting age-2.1 to results/avgdiffsel/full_logo_plots/age-2.1_diffsel.pdf
-    Plotting age-2.2 to results/avgdiffsel/full_logo_plots/age-2.2_diffsel.pdf
-    Plotting age-3.4 to results/avgdiffsel/full_logo_plots/age-3.4_diffsel.pdf
-    Plotting 2009-age-64-Hutch to results/avgdiffsel/full_logo_plots/2009-age-64-Hutch_diffsel.pdf
+    results/avgdiffsel/full_logo_plots/age-31.5_diffsel.pdf already exists.
+    results/avgdiffsel/full_logo_plots/age-2.4_diffsel.pdf already exists.
+    results/avgdiffsel/full_logo_plots/age-2.1_diffsel.pdf already exists.
+    results/avgdiffsel/full_logo_plots/age-2.2_diffsel.pdf already exists.
+    results/avgdiffsel/full_logo_plots/age-3.4_diffsel.pdf already exists.
+    results/avgdiffsel/full_logo_plots/2009-age-64-Hutch_diffsel.pdf already exists.
 
 
 ### Plots of each replicate in averages
@@ -3212,7 +2928,7 @@ for serum_group, df in avg_sel_df.groupby('serum_group'):
 
 
 
-![png](analyze_map_files/analyze_map_117_1.png)
+![png](analyze_map_files/analyze_map_115_1.png)
 
 
     
@@ -3223,7 +2939,7 @@ for serum_group, df in avg_sel_df.groupby('serum_group'):
 
 
 
-![png](analyze_map_files/analyze_map_117_3.png)
+![png](analyze_map_files/analyze_map_115_3.png)
 
 
     
@@ -3234,7 +2950,7 @@ for serum_group, df in avg_sel_df.groupby('serum_group'):
 
 
 
-![png](analyze_map_files/analyze_map_117_5.png)
+![png](analyze_map_files/analyze_map_115_5.png)
 
 
 #### Plot replicate-replicate correlations
@@ -3370,55 +3086,7 @@ corr_plot.save(rep_corr_plot)
 
 
 
-![png](analyze_map_files/analyze_map_121_1.png)
-
-
-
-```python
-! jupyter nbconvert --to markdown analyze_map.ipynb
-```
-
-    [NbConvertApp] Converting notebook analyze_map.ipynb to markdown
-    Traceback (most recent call last):
-      File "/fh/fast/bloom_j/software/conda_v2/envs/BloomLab/bin/jupyter-nbconvert", line 11, in <module>
-        sys.exit(main())
-      File "/fh/fast/bloom_j/software/conda_v2/envs/BloomLab/lib/python3.6/site-packages/jupyter_core/application.py", line 267, in launch_instance
-        return super(JupyterApp, cls).launch_instance(argv=argv, **kwargs)
-      File "/fh/fast/bloom_j/software/conda_v2/envs/BloomLab/lib/python3.6/site-packages/traitlets/config/application.py", line 664, in launch_instance
-        app.start()
-      File "/fh/fast/bloom_j/software/conda_v2/envs/BloomLab/lib/python3.6/site-packages/nbconvert/nbconvertapp.py", line 340, in start
-        self.convert_notebooks()
-      File "/fh/fast/bloom_j/software/conda_v2/envs/BloomLab/lib/python3.6/site-packages/nbconvert/nbconvertapp.py", line 510, in convert_notebooks
-        self.convert_single_notebook(notebook_filename)
-      File "/fh/fast/bloom_j/software/conda_v2/envs/BloomLab/lib/python3.6/site-packages/nbconvert/nbconvertapp.py", line 481, in convert_single_notebook
-        output, resources = self.export_single_notebook(notebook_filename, resources, input_buffer=input_buffer)
-      File "/fh/fast/bloom_j/software/conda_v2/envs/BloomLab/lib/python3.6/site-packages/nbconvert/nbconvertapp.py", line 410, in export_single_notebook
-        output, resources = self.exporter.from_filename(notebook_filename, resources=resources)
-      File "/fh/fast/bloom_j/software/conda_v2/envs/BloomLab/lib/python3.6/site-packages/nbconvert/exporters/exporter.py", line 179, in from_filename
-        return self.from_file(f, resources=resources, **kw)
-      File "/fh/fast/bloom_j/software/conda_v2/envs/BloomLab/lib/python3.6/site-packages/nbconvert/exporters/exporter.py", line 197, in from_file
-        return self.from_notebook_node(nbformat.read(file_stream, as_version=4), resources=resources, **kw)
-      File "/fh/fast/bloom_j/software/conda_v2/envs/BloomLab/lib/python3.6/site-packages/nbconvert/exporters/templateexporter.py", line 322, in from_notebook_node
-        output = self.template.render(nb=nb_copy, resources=resources)
-      File "/fh/fast/bloom_j/software/conda_v2/envs/BloomLab/lib/python3.6/site-packages/nbconvert/exporters/templateexporter.py", line 114, in template
-        self._template_cached = self._load_template()
-      File "/fh/fast/bloom_j/software/conda_v2/envs/BloomLab/lib/python3.6/site-packages/nbconvert/exporters/templateexporter.py", line 293, in _load_template
-        return self.environment.get_template(template_file)
-      File "/fh/fast/bloom_j/software/conda_v2/envs/BloomLab/lib/python3.6/site-packages/jinja2/environment.py", line 830, in get_template
-        return self._load_template(name, self.make_globals(globals))
-      File "/fh/fast/bloom_j/software/conda_v2/envs/BloomLab/lib/python3.6/site-packages/jinja2/environment.py", line 804, in _load_template
-        template = self.loader.load(self, name, globals)
-      File "/fh/fast/bloom_j/software/conda_v2/envs/BloomLab/lib/python3.6/site-packages/jinja2/loaders.py", line 405, in load
-        return loader.load(environment, name, globals)
-      File "/fh/fast/bloom_j/software/conda_v2/envs/BloomLab/lib/python3.6/site-packages/jinja2/loaders.py", line 113, in load
-        source, filename, uptodate = self.get_source(environment, name)
-      File "/fh/fast/bloom_j/software/conda_v2/envs/BloomLab/lib/python3.6/site-packages/nbconvert/exporters/templateexporter.py", line 78, in get_source
-        return self.loader.get_source(environment, template)
-      File "/fh/fast/bloom_j/software/conda_v2/envs/BloomLab/lib/python3.6/site-packages/jinja2/loaders.py", line 171, in get_source
-        f = open_if_exists(filename)
-      File "/fh/fast/bloom_j/software/conda_v2/envs/BloomLab/lib/python3.6/site-packages/jinja2/utils.py", line 154, in open_if_exists
-        return open(filename, mode)
-    PermissionError: [Errno 13] Permission denied: '/fh/fast/bloom_j/software/conda_v2/envs/BloomLab/share/jupyter/nbconvert/templates/markdown.tpl'
+![png](analyze_map_files/analyze_map_119_1.png)
 
 
 
