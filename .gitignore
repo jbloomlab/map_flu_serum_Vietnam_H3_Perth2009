@@ -4,5 +4,7 @@
 *.out
 
 results/*
-
 !results/notebooks
+!results/avgdiffsel
+results/avgdiffsel/*
+!results/avgdiffsel/avg_sel_tidy.csv
