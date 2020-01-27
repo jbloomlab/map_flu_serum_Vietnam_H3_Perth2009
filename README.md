@@ -30,6 +30,10 @@ To execute these notebooks and generate the Markdown output referred to in the s
 
     ./run_nbs.bash
 
+On the Fred Hutch cluster, do this via `slurm` with:
+
+    sbatch -p largenode -c 16 --mem=200000 run_nbs.bash
+
 ## Input data
 All input data is in the [./data/](data) subdirectory.
 Specifically:
