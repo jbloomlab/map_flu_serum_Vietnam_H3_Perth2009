@@ -84,12 +84,3 @@ VIDD4:
   name: 2009-age-64-Hutch
   description: collected at Hutch in 11/2008 from person born in 1945
   group: VIDD_sera
-
-#------------------------------
-# VIDD pool
-
-VIDDpool:
-  name: VIDD pool
-  description: pooled Hutch VIDD samples (VIDD1, VIDD2, VIDD4, and VIDD5)
-  group: human
-
