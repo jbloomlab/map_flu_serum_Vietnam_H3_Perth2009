@@ -53,7 +53,7 @@ print(f"Using dms_tools2 version {dms_tools2.__version__}")
 print(f"Using dmslogo version {dmslogo.__version__}")
 ```
 
-    Using dms_tools2 version 2.6.4
+    Using dms_tools2 version 2.6.5
     Using dmslogo version 0.3.1
 
 
@@ -181,6 +181,10 @@ display(HTML(pd.Series(config)
       <td>data/wt_neut_config.yaml</td>
     </tr>
     <tr>
+      <th>neut_config</th>
+      <td>data/neut_config.yaml</td>
+    </tr>
+    <tr>
       <th>figure_config</th>
       <td>data/figure_config.yaml</td>
     </tr>
@@ -259,6 +263,10 @@ display(HTML(pd.Series(config)
     <tr>
       <th>wt_neut_and_bind_outdir</th>
       <td>results/wt_neut_and_bind</td>
+    </tr>
+    <tr>
+      <th>neut_curves_outdir</th>
+      <td>results/neut_curves</td>
     </tr>
   </tbody>
 </table>
@@ -389,15 +397,15 @@ display(HTML(sera.to_html(index=False)))
     </tr>
     <tr>
       <td>VIDD4</td>
-      <td>2009-age-64-Hutch</td>
+      <td>age-64-Hutch</td>
       <td>collected at Hutch in 11/2008 from person born in 1945</td>
       <td>VIDD_sera</td>
     </tr>
     <tr>
-      <td>VIDDpool</td>
-      <td>VIDD pool</td>
-      <td>pooled Hutch VIDD samples (VIDD1, VIDD2, VIDD4, and VIDD5)</td>
-      <td>human</td>
+      <td>ferret-Pitt2</td>
+      <td>ferret-Pitt2</td>
+      <td>Lakdawala lab ferret, 23 days after infection by Perth/2009 with our HA</td>
+      <td>ferret</td>
     </tr>
   </tbody>
 </table>
@@ -1096,7 +1104,7 @@ assert all(os.path.isfile(f) for f in
            ), 'missing counts files'
 ```
 
-    INFO:numexpr.utils:Note: NumExpr detected 28 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 8.
+    INFO:numexpr.utils:Note: NumExpr detected 56 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 8.
     INFO:numexpr.utils:NumExpr defaulting to 8 threads.
 
 
@@ -3798,18 +3806,18 @@ for tup in (avg_selections
     assert os.path.isfile(plotfile)
 ```
 
-    Plotting age-2.1 to results/avgdiffsel/full_logo_plots/age-2.1_diffsel.pdf
-    Plotting age-2.2 to results/avgdiffsel/full_logo_plots/age-2.2_diffsel.pdf
-    Plotting age-2.4 to results/avgdiffsel/full_logo_plots/age-2.4_diffsel.pdf
-    Plotting age-2.5 to results/avgdiffsel/full_logo_plots/age-2.5_diffsel.pdf
-    Plotting age-2.5-b to results/avgdiffsel/full_logo_plots/age-2.5-b_diffsel.pdf
-    Plotting age-3.3 to results/avgdiffsel/full_logo_plots/age-3.3_diffsel.pdf
-    Plotting age-3.3-b to results/avgdiffsel/full_logo_plots/age-3.3-b_diffsel.pdf
-    Plotting age-3.4 to results/avgdiffsel/full_logo_plots/age-3.4_diffsel.pdf
-    Plotting age-3.5 to results/avgdiffsel/full_logo_plots/age-3.5_diffsel.pdf
-    Plotting age-30.5 to results/avgdiffsel/full_logo_plots/age-30.5_diffsel.pdf
-    Plotting age-31.5 to results/avgdiffsel/full_logo_plots/age-31.5_diffsel.pdf
-    Plotting age-33.5 to results/avgdiffsel/full_logo_plots/age-33.5_diffsel.pdf
+    results/avgdiffsel/full_logo_plots/age-2.1_diffsel.pdf already exists.
+    results/avgdiffsel/full_logo_plots/age-2.2_diffsel.pdf already exists.
+    results/avgdiffsel/full_logo_plots/age-2.4_diffsel.pdf already exists.
+    results/avgdiffsel/full_logo_plots/age-2.5_diffsel.pdf already exists.
+    results/avgdiffsel/full_logo_plots/age-2.5-b_diffsel.pdf already exists.
+    results/avgdiffsel/full_logo_plots/age-3.3_diffsel.pdf already exists.
+    results/avgdiffsel/full_logo_plots/age-3.3-b_diffsel.pdf already exists.
+    results/avgdiffsel/full_logo_plots/age-3.4_diffsel.pdf already exists.
+    results/avgdiffsel/full_logo_plots/age-3.5_diffsel.pdf already exists.
+    results/avgdiffsel/full_logo_plots/age-30.5_diffsel.pdf already exists.
+    results/avgdiffsel/full_logo_plots/age-31.5_diffsel.pdf already exists.
+    results/avgdiffsel/full_logo_plots/age-33.5_diffsel.pdf already exists.
 
 
 ### Most selected mutation / site for each serum

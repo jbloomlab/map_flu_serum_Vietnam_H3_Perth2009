@@ -7,7 +7,8 @@ RESULTSDIR="results/notebooks"
 mkdir -p $RESULTSDIR
 
 declare -a nbs=("wt_neut_and_bind.ipynb"
-                "analyze_map.ipynb")
+                "analyze_map.ipynb"
+                "neut_curves.ipynb")
 
 for nb in "${nbs[@]}"
 do
