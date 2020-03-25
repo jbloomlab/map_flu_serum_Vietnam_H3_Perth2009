@@ -50,6 +50,9 @@ natseqs: data/human_H3N2_HA_2007-2018.fasta.gz
 # information on neutralization assays against wildtype
 wt_neut_config: data/wt_neut_config.yaml
 
+# information on neutralization assays against mutants
+neut_config: data/neut_config.yaml
+
 # configuration for fine-tuned figures of logo plots and neut curves
 figure_config: data/figure_config.yaml
 
@@ -75,4 +78,5 @@ figsdir: results/figures  # additional customized figures
 finalfigsdir: results/figures/final  # final figures for paper
 notebookdir: results/notebooks  # notebooks
 wt_neut_and_bind_outdir: results/wt_neut_and_bind
+neut_curves_outdir: results/neut_curves
 

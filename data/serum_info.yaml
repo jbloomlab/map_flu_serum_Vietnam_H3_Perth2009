@@ -79,8 +79,18 @@ HC080054:
   
 #------------------------------
 # Human sera from Terry Stevens-Ayers in Hutch VIDD Division
+# Profiled already in Lee et al (2019), eLife
 
 VIDD4:
-  name: 2009-age-64-Hutch
+  name: age-64-Hutch
   description: collected at Hutch in 11/2008 from person born in 1945
   group: VIDD_sera
+
+#-------------------------------
+# Ferret sera
+# Profiled already in Lee et al (2019), eLife
+
+ferret-Pitt2:
+  name: ferret-Pitt2
+  description: Lakdawala lab ferret, 23 days after infection by Perth/2009 with our HA
+  group: ferret

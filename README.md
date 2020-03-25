@@ -16,6 +16,8 @@ Look at the Markdown output of the Jupyter notebooks for a quick overview of the
   
   - [results/notebooks/analyze_map.md](results/notebooks/analyze_map.md) has the results of the mutational antigenic profiling.
 
+  - [results/notebooks/neut_curves.md](results/notebooks/neut_curves.md) has the results of validation neutralization assays on strongly selected mutations.
+
 ## Configuring and running the analysis
 The configuration for the analysis is in [config.yaml](config.yaml), which in turns points to various other lists of samples and input data.
 This configuration file is self-explanatory.
@@ -25,6 +27,8 @@ The analysis is performed by a series of Jupyter notebooks:
   - [wt_neut_and_bind.ipynb](wt_neut_and_bind.ipynb)
 
   - [analyze_map.ipynb](analyze_map.ipynb)
+
+  - [neut_curves.ipynb](neut_curves.ipynb)
 
 To execute these notebooks and generate the Markdown output referred to in the subsection above, runs the script [run_nb.bash](run_nbs.bash) with:
 
@@ -55,6 +59,16 @@ Specifically:
     - *serum_sample_subset*: subset group to which serum belongs in initial partitioning used by Maciek to select samples for this study
 
   - [data/wt_neut_config](data/wt_neut_config.yaml): information on plate reader data for the neutralization assays of the wildtype Perth/2009 HA against the sera.
+
+  - [data/neut_config.yaml](data/neut_config.yaml): information on plate reader data for neutralization assays against strongly selected mutations in mutational antigenic profiling.
+
+  - [data/sample_list.csv](data/sample_list.csv): deep sequencing data information for each sample.
+
+  - [data/Perth09_HA_reference.fa](data/Perth09_HA_reference.fa): sequence of wildtype Perth/2009 HA used in experiments.
+
+  - [data/H3renumbering_scheme.csv](data/H3renumbering_scheme.csv): maps sequential numbering of Perth/2009 HA to classical H3 numbering scheme.
+
+  - [data/neut_plate_reader_data](data/neut_plate_reader_data): subdirectory with raw plate reader data from neutralization curves.
 
 ## Results
 The results are placed in the [./results/](results) subdirectory.
