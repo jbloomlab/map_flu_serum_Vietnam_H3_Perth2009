@@ -1,34 +1,90 @@
-- VIDD4:
-    excelfile: data/neut_plate_reader_data/VIDD4.xlsx
+- HC070041:
+    excelfile: data/neut_plate_reader_data/HC070041.xlsx
     sheet_mapping:
       WT:
-        serum: VIDD4
+        serum: HC070041
         virus: wt
         dilution_factor: 2
-        initial_concentration: 0.013889
-        excluded_dilutions: [1]
+        initial_concentration: 0.00641
         
       F193F:
-        serum: VIDD4
+        serum: HC070041
         virus: F193F
         dilution_factor: 2
-        initial_concentration: 0.013889
-        excluded_dilutions: [1]
+        initial_concentration: 0.00641
         
-      F159G:
-        serum: VIDD4
-        virus: F159G
+      K189D:
+        serum: HC070041
+        virus: K189D
         dilution_factor: 2
-        initial_concentration: 0.013889
-        excluded_dilutions: [1]
+        initial_concentration: 0.00641
         
       F193D:
-        serum: VIDD4
+        serum: HC070041
         virus: F193D
         dilution_factor: 2
-        initial_concentration: 0.013889
-        excluded_dilutions: [1]
+        initial_concentration: 0.00641
         
+      WT2:
+        serum: HC070041
+        virus: wt2
+        dilution_factor: 2
+        initial_concentration: 0.00641
+        
+      F159G:
+        serum: HC070041
+        virus: F159G
+        dilution_factor: 2
+        initial_concentration: 0.00641 
+        
+- HC150036:
+    excelfile: data/neut_plate_reader_data/HC150036.xlsx
+    sheet_mapping:
+      WT:
+        serum: HC150036
+        virus: wt
+        dilution_factor: 2
+        initial_concentration: 0.00833
+        
+      F193F:
+        serum: HC150036
+        virus: F193F
+        dilution_factor: 2
+        initial_concentration: 0.00833
+        
+      K189D:
+        serum: HC150036
+        virus: K189D
+        dilution_factor: 2
+        initial_concentration: 0.00833
+            
+      F193D:
+        serum: HC150036
+        virus: F193D
+        dilution_factor: 2
+        initial_concentration: 0.00833
+        
+      WT2:
+        serum: HC150036
+        virus: wt2
+        dilution_factor: 2
+        initial_concentration: 0.00833
+        excluded_dilutions: [1] 
+        
+      F159G:
+        serum: HC150036
+        virus: F159G
+        dilution_factor: 2
+        initial_concentration: 0.00833
+        excluded_dilutions: [1] 
+        
+      I192E:
+        serum: HC150036
+        virus: I192E
+        dilution_factor: 2
+        initial_concentration: 0.00833
+        excluded_dilutions: [1]   
+         
 - HC070021:
     excelfile: data/neut_plate_reader_data/HC070021.xlsx
     sheet_mapping:
@@ -59,6 +115,187 @@
         dilution_factor: 2
         initial_concentration: 0.005556
         excluded_dilutions: [1]
+        
+      WT2:
+        serum: HC070021
+        virus: wt2
+        dilution_factor: 2
+        initial_concentration: 0.005556
+        excluded_dilutions: [1]
+        
+      K189D:
+        serum: HC070021
+        virus: K189D
+        dilution_factor: 2
+        initial_concentration: 0.005556
+        excluded_dilutions: [1]
+        
+      I192E:
+        serum: HC070021
+        virus: I192E
+        dilution_factor: 2
+        initial_concentration: 0.005556
+        excluded_dilutions: [1]  
+
+- HC120043:
+    excelfile: data/neut_plate_reader_data/HC120043.xlsx
+    sheet_mapping:
+      WT:
+        serum: HC120043
+        virus: wt
+        dilution_factor: 2
+        initial_concentration: 0.00926
+        excluded_dilutions: [1, 2]
+        
+      F193F:
+        serum: HC120043
+        virus: F193F
+        dilution_factor: 2
+        initial_concentration: 0.00926
+        excluded_dilutions: [1, 2]
+        
+      K189D:
+        serum: HC120043
+        virus: K189D
+        dilution_factor: 2
+        initial_concentration: 0.00926
+        excluded_dilutions: [1]
+        
+      F193D:
+        serum: HC120043
+        virus: F193D
+        dilution_factor: 2
+        initial_concentration: 0.00926
+        excluded_dilutions: [1, 2]
+      
+      WT2:
+        serum: HC120043
+        virus: wt2
+        dilution_factor: 2
+        initial_concentration: 0.00926
+        excluded_dilutions: [1, 2]
+        
+      F159G:
+        serum: HC120043
+        virus: F159G
+        dilution_factor: 2
+        initial_concentration: 0.00926
+        excluded_dilutions: [1]
+
+- HC140028:
+    excelfile: data/neut_plate_reader_data/HC140028_2.xlsx
+    sheet_mapping:
+      WT:
+        serum: HC140028
+        virus: wt
+        dilution_factor: 2
+        initial_concentration: 0.01667
+        excluded_dilutions: [1, 2]
+        
+      F193F:
+        serum: HC140028
+        virus: F193F
+        dilution_factor: 2
+        initial_concentration: 0.01667
+        excluded_dilutions: [1, 2]
+        
+      F159G:
+        serum: HC140028
+        virus: F159G
+        dilution_factor: 2
+        initial_concentration: 0.01667
+        excluded_dilutions: [1, 2]
+      
+      K189D:
+        serum: HC140028
+        virus: K189D
+        dilution_factor: 2
+        initial_concentration: 0.01667
+        excluded_dilutions: [1, 2]
+        
+      F193D:
+        serum: HC140028
+        virus: F193D
+        dilution_factor: 2
+        initial_concentration: 0.01667
+        excluded_dilutions: [1, 2]
+
+
+- 3HC080043:
+    excelfile: data/neut_plate_reader_data/HC080043_3.xlsx
+    sheet_mapping:
+      WT:
+        serum: HC080043
+        virus: wt
+        dilution_factor: 2
+        initial_concentration: 0.01667
+        excluded_dilutions: [1, 2]
+        
+      F193F:
+        serum: HC080043
+        virus: F193F
+        dilution_factor: 2
+        initial_concentration: 0.01667
+        excluded_dilutions: [1, 2]
+        
+      F159G:
+        serum: HC080043
+        virus: F159G
+        dilution_factor: 2
+        initial_concentration: 0.01667
+        excluded_dilutions: [1, 2]
+     
+      K189D:
+        serum: HC080043
+        virus: K189D
+        dilution_factor: 2
+        initial_concentration: 0.01667
+        excluded_dilutions: [1, 2]
+        
+      F193D:
+        serum: HC080043
+        virus: F193D
+        dilution_factor: 2
+        initial_concentration: 0.01667
+        excluded_dilutions: [1, 2]
+        
+- HC070072:
+    excelfile: data/neut_plate_reader_data/HC070072.xlsx
+    sheet_mapping:
+      WT:
+        serum: HC070072
+        virus: wt
+        dilution_factor: 2
+        initial_concentration: 0.02083
+        excluded_dilutions: [1, 2]
+        
+      F193F:
+        serum: HC070072
+        virus: F193F
+        dilution_factor: 2
+        initial_concentration: 0.02083
+        excluded_dilutions: [1, 2]
+        
+      F159G:
+        serum: HC070072
+        virus: F159G
+        dilution_factor: 2
+        initial_concentration: 0.02083
+        excluded_dilutions: [1, 2]
+        
+      K189D:
+        serum: HC070072
+        virus: K189D
+        dilution_factor: 2
+        initial_concentration: 0.02083
+        excluded_dilutions: [1, 2]
+        
+      F193D:
+        serum: HC070072
+        virus: F193D
+        dilution_factor: 2
+        initial_concentration: 0.02083
+        excluded_dilutions: [1, 2]
 
 - HC150044:
     excelfile: data/neut_plate_reader_data/HC150044.xlsx
@@ -89,163 +326,28 @@
         virus: F193D
         dilution_factor: 2
         initial_concentration: 0.005556
- 
- 
-- 2HC080043:
-    excelfile: data/neut_plate_reader_data/2HC080043.xlsx
-    sheet_mapping:
-      WT:
-        serum: HC080043
-        virus: wt
-        dilution_factor: 2
-        initial_concentration: 0.013889
-        excluded_dilutions: [1]
         
-      F193F:
-        serum: HC080043
-        virus: F193F
+      WT2:
+        serum: HC150044
+        virus: wt2
         dilution_factor: 2
-        initial_concentration: 0.013889
-        excluded_dilutions: [1]
-        
-      F159G:
-        serum: HC080043
-        virus: F159G
-        dilution_factor: 2
-        initial_concentration: 0.013889
-        
-        
-      F193D:
-        serum: HC080043
-        virus: F193D
-        dilution_factor: 2
-        initial_concentration: 0.013889
-      
-      
-- HC070041:
-    excelfile: data/neut_plate_reader_data/HC070041.xlsx
-    sheet_mapping:
-      WT:
-        serum: HC070041
-        virus: wt
-        dilution_factor: 2
-        initial_concentration: 0.00641
-        
-        
-      F193F:
-        serum: HC070041
-        virus: F193F
-        dilution_factor: 2
-        initial_concentration: 0.00641
+        initial_concentration: 0.005556
         
         
       K189D:
-        serum: HC070041
+        serum: HC150044
         virus: K189D
         dilution_factor: 2
-        initial_concentration: 0.00641
+        initial_concentration: 0.005556
         
         
-      F193D:
-        serum: HC070041
-        virus: F193D
+      I192E:
+        serum: HC150044
+        virus: I192E
         dilution_factor: 2
-        initial_concentration: 0.00641
-        
-        
-- HC150036:
-    excelfile: data/neut_plate_reader_data/HC150036.xlsx
-    sheet_mapping:
-      WT:
-        serum: HC150036
-        virus: wt
-        dilution_factor: 2
-        initial_concentration: 0.00833
-        
-        
-      F193F:
-        serum: HC150036
-        virus: F193F
-        dilution_factor: 2
-        initial_concentration: 0.00833
-        
-        
-      K189D:
-        serum: HC150036
-        virus: K189D
-        dilution_factor: 2
-        initial_concentration: 0.00833
-        
-        
-      F193D:
-        serum: HC150036
-        virus: F193D
-        dilution_factor: 2
-        initial_concentration: 0.00833
-        
-        
-- HC080054:
-    excelfile: data/neut_plate_reader_data/HC080054.xlsx
-    sheet_mapping:
-      WT:
-        serum: HC080054
-        virus: wt
-        dilution_factor: 2
-        initial_concentration: 0.00833
-        excluded_dilutions: [1]
-        
-      F193F:
-        serum: HC080054
-        virus: F193F
-        dilution_factor: 2
-        initial_concentration: 0.00833
-        excluded_dilutions: [1]
-        
-      K189D:
-        serum: HC080054
-        virus: K189D
-        dilution_factor: 2
-        initial_concentration: 0.00833
-        excluded_dilutions: [1]
-        
-      F193D:
-        serum: HC080054
-        virus: F193D
-        dilution_factor: 2
-        initial_concentration: 0.00833
-        excluded_dilutions: [1]
-        
-- HC140028:
-    excelfile: data/neut_plate_reader_data/HC140028.xlsx
-    sheet_mapping:
-      WT:
-        serum: HC140028
-        virus: wt
-        dilution_factor: 2
-        initial_concentration: 0.02083
-        excluded_dilutions: [1]
-        
-      F193F:
-        serum: HC140028
-        virus: F193F
-        dilution_factor: 2
-        initial_concentration: 0.02083
-        excluded_dilutions: [1]
-        
-      K189D:
-        serum: HC140028
-        virus: K189D
-        dilution_factor: 2
-        initial_concentration: 0.02083
-        excluded_dilutions: [1]
-        
-      F193D:
-        serum: HC140028
-        virus: F193D
-        dilution_factor: 2
-        initial_concentration: 0.02083
-        excluded_dilutions: [1]
-        
+        initial_concentration: 0.005556
+
+
 - HC060002:
     excelfile: data/neut_plate_reader_data/HC060002.xlsx
     sheet_mapping:
@@ -277,38 +379,196 @@
         initial_concentration: 0.00926
         excluded_dilutions: [1]
         
+      WT2:
+        serum: HC060002
+        virus: wt2
+        dilution_factor: 2
+        initial_concentration: 0.00926
+        excluded_dilutions: [1] 
         
-- HC120043:
-    excelfile: data/neut_plate_reader_data/HC120043.xlsx
+      F159G:
+        serum: HC060002
+        virus: F159G
+        dilution_factor: 2
+        initial_concentration: 0.00926
+        excluded_dilutions: [1] 
+        
+      I192E:
+        serum: HC060002
+        virus: I192E
+        dilution_factor: 2
+        initial_concentration: 0.00926
+        excluded_dilutions: [1]   
+
+  
+        
+- HC150108:
+    excelfile: data/neut_plate_reader_data/HC150108.xlsx
     sheet_mapping:
       WT:
-        serum: HC120043
+        serum: HC150108
         virus: wt
         dilution_factor: 2
-        initial_concentration: 0.00926
-        excluded_dilutions: [1] 
+        initial_concentration: 0.02083
+        excluded_dilutions: [1, 2]
         
       F193F:
-        serum: HC120043
+        serum: HC150108
         virus: F193F
         dilution_factor: 2
-        initial_concentration: 0.00926
-        excluded_dilutions: [1] 
+        initial_concentration: 0.02083
+        excluded_dilutions: [1, 2]
+        
+      F159G:
+        serum: HC150108
+        virus: F159G
+        dilution_factor: 2
+        initial_concentration: 0.02083
+        excluded_dilutions: [1, 2]
         
       K189D:
-        serum: HC120043
+        serum: HC150108
         virus: K189D
         dilution_factor: 2
-        initial_concentration: 0.00926
-        excluded_dilutions: [1] 
+        initial_concentration: 0.02083
+        excluded_dilutions: [1, 2]
         
       F193D:
-        serum: HC120043
+        serum: HC150108
         virus: F193D
         dilution_factor: 2
-        initial_concentration: 0.00926
+        initial_concentration: 0.02083
+        excluded_dilutions: [1, 2]
+
+- HC070097:
+    excelfile: data/neut_plate_reader_data/HC070097.xlsx
+    sheet_mapping:
+      WT:
+        serum: HC070097
+        virus: wt
+        dilution_factor: 2
+        initial_concentration: 0.00463
+        excluded_dilutions: [1, 2]
+        
+      F193F:
+        serum: HC070097
+        virus: F193F
+        dilution_factor: 2
+        initial_concentration: 0.00463
+        excluded_dilutions: [1, 2]
+
+      F159G:
+        serum: HC070097
+        virus: F159G
+        dilution_factor: 2
+        initial_concentration: 0.00463
+        excluded_dilutions: [1, 2]
+
+      K189D:
+        serum: HC070097
+        virus: K189D
+        dilution_factor: 2
+        initial_concentration: 0.00463
+        excluded_dilutions: [1, 2]
+        
+      F193D:
+        serum: HC070097
+        virus: F193D
+        dilution_factor: 2
+        initial_concentration: 0.00463
+        excluded_dilutions: [1, 2]
+      
+      I192E:
+        serum: HC070097
+        virus: I192E
+        dilution_factor: 2
+        initial_concentration: 0.00463
+        excluded_dilutions: [1, 2]
+
+- HC080054:
+    excelfile: data/neut_plate_reader_data/HC080054.xlsx
+    sheet_mapping:
+      WT:
+        serum: HC080054
+        virus: wt
+        dilution_factor: 2
+        initial_concentration: 0.00833
+        excluded_dilutions: [1]
+        
+      F193F:
+        serum: HC080054
+        virus: F193F
+        dilution_factor: 2
+        initial_concentration: 0.00833
+        excluded_dilutions: [1]
+        
+      K189D:
+        serum: HC080054
+        virus: K189D
+        dilution_factor: 2
+        initial_concentration: 0.00833
+        excluded_dilutions: [1]
+        
+      F193D:
+        serum: HC080054
+        virus: F193D
+        dilution_factor: 2
+        initial_concentration: 0.00833
+        excluded_dilutions: [1]
+
+      WT2:
+        serum: HC080054
+        virus: wt2
+        dilution_factor: 2
+        initial_concentration: 0.00833
         excluded_dilutions: [1] 
         
+      F159G:
+        serum: HC080054
+        virus: F159G
+        dilution_factor: 2
+        initial_concentration: 0.00833
+        excluded_dilutions: [1] 
+        
+      I192E:
+        serum: HC080054
+        virus: I192E
+        dilution_factor: 2
+        initial_concentration: 0.00833
+        excluded_dilutions: [1] 
+        
+- VIDD4:
+    excelfile: data/neut_plate_reader_data/VIDD4.xlsx
+    sheet_mapping:
+      WT:
+        serum: VIDD4
+        virus: wt
+        dilution_factor: 2
+        initial_concentration: 0.013889
+        excluded_dilutions: [1]
+        
+      F193F:
+        serum: VIDD4
+        virus: F193F
+        dilution_factor: 2
+        initial_concentration: 0.013889
+        excluded_dilutions: [1]
+        
+      F159G:
+        serum: VIDD4
+        virus: F159G
+        dilution_factor: 2
+        initial_concentration: 0.013889
+        excluded_dilutions: [1]
+        
+      F193D:
+        serum: VIDD4
+        virus: F193D
+        dilution_factor: 2
+        initial_concentration: 0.013889
+        excluded_dilutions: [1]
+        
+
 - ferret-Pitt2:
     excelfile: data/neut_plate_reader_data/Pitt2.xlsx
     sheet_mapping:
@@ -340,3 +600,4 @@
         initial_concentration: 0.00833
         excluded_dilutions: [1]       
         
+                      
