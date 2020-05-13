@@ -84,6 +84,27 @@
         dilution_factor: 2
         initial_concentration: 0.00833
         excluded_dilutions: [1]   
+
+      Feb WT:
+        serum: HC150036
+        virus: Feb wt
+        dilution_factor: 2
+        initial_concentration: 0.00463
+        excluded_dilutions: [1]
+
+      Feb K189D:
+        serum: HC150036
+        virus: Feb K189D
+        dilution_factor: 2
+        initial_concentration: 0.00463
+        excluded_dilutions: [1]
+
+      Feb K189N:
+        serum: HC150036
+        virus: Feb K189N
+        dilution_factor: 2
+        initial_concentration: 0.00463
+        excluded_dilutions: [1]
          
 - HC070021:
     excelfile: data/neut_plate_reader_data/HC070021.xlsx
@@ -136,6 +157,27 @@
         dilution_factor: 2
         initial_concentration: 0.005556
         excluded_dilutions: [1]  
+
+      Feb WT:
+        serum: HC070021
+        virus: Feb wt
+        dilution_factor: 2
+        initial_concentration: 0.00463
+        excluded_dilutions: [1]
+
+      Feb K189D:
+        serum: HC070021
+        virus: Feb K189D
+        dilution_factor: 2
+        initial_concentration: 0.00463
+        excluded_dilutions: [1]
+
+      Feb K189N:
+        serum: HC070021
+        virus: Feb K189N
+        dilution_factor: 2
+        initial_concentration: 0.00463
+        excluded_dilutions: [1]
 
 - HC120043:
     excelfile: data/neut_plate_reader_data/HC120043.xlsx
@@ -221,7 +263,7 @@
         excluded_dilutions: [1, 2]
 
 
-- 3HC080043:
+- HC080043:
     excelfile: data/neut_plate_reader_data/HC080043_3.xlsx
     sheet_mapping:
       WT:
@@ -258,6 +300,27 @@
         dilution_factor: 2
         initial_concentration: 0.01667
         excluded_dilutions: [1, 2]
+
+      May WT:
+        serum: HC080043
+        virus: May wt
+        dilution_factor: 2
+        initial_concentration: 0.00833
+        excluded_dilutions: [1]
+
+      May K189N:
+        serum: HC080043
+        virus: May K189N
+        dilution_factor: 2
+        initial_concentration: 0.00833
+        excluded_dilutions: [1]
+
+      May K189D:
+        serum: HC080043
+        virus: May K189D
+        dilution_factor: 2
+        initial_concentration: 0.00833
+        excluded_dilutions: [1]
         
 - HC070072:
     excelfile: data/neut_plate_reader_data/HC070072.xlsx
@@ -296,6 +359,27 @@
         dilution_factor: 2
         initial_concentration: 0.02083
         excluded_dilutions: [1, 2]
+
+      May WT:
+        serum: HC070072
+        virus: May wt
+        dilution_factor: 2
+        initial_concentration: 0.01667
+        excluded_dilutions: [1]
+
+      May K189N:
+        serum: HC070072
+        virus: May K189N
+        dilution_factor: 2
+        initial_concentration: 0.01667
+        excluded_dilutions: [1]
+
+      May K189D:
+        serum: HC070072
+        virus: May K189D
+        dilution_factor: 2
+        initial_concentration: 0.01667
+        excluded_dilutions: [1]
 
 - HC150044:
     excelfile: data/neut_plate_reader_data/HC150044.xlsx
@@ -347,6 +431,26 @@
         dilution_factor: 2
         initial_concentration: 0.005556
 
+      May WT:
+        serum: HC150044
+        virus: May wt
+        dilution_factor: 2
+        initial_concentration: 0.005556
+        excluded_dilutions: [1]
+
+      May K189N:
+        serum: HC150044
+        virus: May K189N
+        dilution_factor: 2
+        initial_concentration: 0.005556
+        excluded_dilutions: [1]
+
+      May K189D:
+        serum: HC150044
+        virus: May K189D
+        dilution_factor: 2
+        initial_concentration: 0.005556
+        excluded_dilutions: [1]
 
 - HC060002:
     excelfile: data/neut_plate_reader_data/HC060002.xlsx
@@ -398,9 +502,28 @@
         virus: I192E
         dilution_factor: 2
         initial_concentration: 0.00926
-        excluded_dilutions: [1]   
+        excluded_dilutions: [1]
 
-  
+      May WT:
+        serum: HC060002
+        virus: May wt
+        dilution_factor: 2
+        initial_concentration: 0.00926
+        excluded_dilutions: [1]
+
+      May K189N:
+        serum: HC060002
+        virus: May K189N
+        dilution_factor: 2
+        initial_concentration: 0.00926
+        excluded_dilutions: [1]
+
+      May K189D:
+        serum: HC060002
+        virus: May K189D
+        dilution_factor: 2
+        initial_concentration: 0.00926
+        excluded_dilutions: [1] 
         
 - HC150108:
     excelfile: data/neut_plate_reader_data/HC150108.xlsx
